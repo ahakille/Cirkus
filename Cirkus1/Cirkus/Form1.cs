@@ -24,7 +24,10 @@ namespace Cirkus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Test
+            while (1==1) 
+            {
+                MessageBox.Show("mohahahha");
+            }
         }
     }
 }
