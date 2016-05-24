@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Cirkus
 {
@@ -13,21 +14,24 @@ namespace Cirkus
         private NpgsqlConnection _conn;
         private NpgsqlCommand _cmd;
         private NpgsqlDataReader _dr;
+        private DataTable _tablell;
 
         public Postgres()
         {
             // hej=vår databas
             _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["hej"].ConnectionString);
             _conn.Open();
+            _tablell = new DataTable();
             
         }
-        private NpgsqlDataReader sqlFraga (string sql)
+        private DataTable sqlFraga (string sql)
         {
             try
             {
                 _cmd = new NpgsqlCommand(sql, _conn);
                 _dr = _cmd.ExecuteReader();
-                return _dr;
+                _tablell.Load(_dr);
+                return _tablell;
             }
             catch (NpgsqlException ex)
             {
