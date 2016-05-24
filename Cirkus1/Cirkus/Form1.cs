@@ -28,6 +28,8 @@ namespace Cirkus
             while (1==1) 
             {
                 MessageBox.Show("mohahahha");
+
+                //test
             }
         }
     }
