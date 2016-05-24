@@ -16,7 +16,7 @@ namespace Cirkus
 
         public Postgres()
         {
-            // hej=vårt databas
+            // hej=vår databas
             _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["hej"].ConnectionString);
             _conn.Open();
             
@@ -36,7 +36,7 @@ namespace Cirkus
             }
             finally
             {
-                _conn.Close;
+            //    _conn.Close();
             }
                 
             
