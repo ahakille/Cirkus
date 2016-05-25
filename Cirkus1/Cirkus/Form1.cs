@@ -25,12 +25,9 @@ namespace Cirkus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            while (1==1) 
-            {
-                MessageBox.Show("mohahahha");
+            postgres test = new postgres();
+            test.test();
 
-                //test
-            }
         }
     }
 }

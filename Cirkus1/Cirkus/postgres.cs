@@ -16,18 +16,21 @@ namespace Cirkus
         private NpgsqlDataReader _dr;
         private DataTable _tablell;
 
-        public Postgres()
+        public postgres()
         {
-            // hej=vår databas
-            _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["hej"].ConnectionString);
-            _conn.Open();
+                                                                      // db=vår databas
+           // _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+           // _conn.Open();
             _tablell = new DataTable();
+            
             
         }
         private DataTable sqlFraga (string sql)
         {
             try
             {
+                _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+                _conn.Open();
                 _cmd = new NpgsqlCommand(sql, _conn);
                 _dr = _cmd.ExecuteReader();
                 _tablell.Load(_dr);
@@ -45,6 +48,10 @@ namespace Cirkus
                 
             
 
+        }
+        public void test()
+        {
+            sqlFraga("select * from *");
         }
     }
 }
