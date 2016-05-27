@@ -19,8 +19,8 @@ namespace Cirkus
         public postgres()
         {
                                                                       // db=vår databas
-           // _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-           // _conn.Open();
+            _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+            _conn.Open();
             _tablell = new DataTable();
             
             
@@ -29,8 +29,6 @@ namespace Cirkus
         {
             try
             {
-                _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-                _conn.Open();
                 _cmd = new NpgsqlCommand(sql, _conn);
                 _dr = _cmd.ExecuteReader();
                 _tablell.Load(_dr);
@@ -43,7 +41,7 @@ namespace Cirkus
             }
             finally
             {
-            //    _conn.Close();
+               _conn.Close();
             }
                 
             
