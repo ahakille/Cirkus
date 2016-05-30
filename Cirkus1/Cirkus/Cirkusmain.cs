@@ -28,8 +28,12 @@ namespace Cirkus
         {
             postgres test = new postgres();
             //DataTable _tabell = new DataTable();
-             _tabell=test.sqlFrågaDr();
-            medlemLbox.DataSource = _tabell;
+          //   _tabell=test.sqlFrågaDr();
+           // medlemLbox.DataSource = _tabell;
+            // postgres test = new postgres();
+            //test.sqlFråga("bajs");
+            medlem m = new medlem();
+            m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
 
         }
     }

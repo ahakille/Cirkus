@@ -69,7 +69,7 @@ namespace Cirkus
             }
             catch (NpgsqlException ex)
             {
-                
+             
             }
 
             finally
