@@ -53,12 +53,12 @@ namespace Cirkus
             
 
         }
-        public List<medlem> sqlFrågaDr()
+        public DataTable sqlFrågaDr()
         {
             _tablell= sqlFraga("select * from medlem");
             
-            sqlFrågaDr = _tablell;
-            return _sqlfrågaDr;
+            
+            return _tablell;
             //if (_tablell.Columns[0].ColumnName.Equals("errormessage"))
             //{
 
@@ -78,7 +78,7 @@ namespace Cirkus
             }
             catch (NpgsqlException ex)
             {
-                return null;
+              //  return null;
             }
             finally
             {
