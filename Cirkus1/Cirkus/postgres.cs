@@ -51,5 +51,21 @@ namespace Cirkus
         {
             sqlFraga("select * from *");
         }
+
+        public void SqlAdmin(string sql)
+        {
+            try
+            {
+                _cmd = new NpgsqlCommand(sql, _conn);
+            }
+            catch (NpgsqlException ex)
+            {
+                return null;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
     }
 }
