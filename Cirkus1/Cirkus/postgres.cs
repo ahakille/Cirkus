@@ -56,9 +56,7 @@ namespace Cirkus
         public DataTable sqlFrågaDr()
         {
             _tablell= sqlFraga("select * from medlem");
-            
-            
-            return _tablell;
+             return _tablell;
             //if (_tablell.Columns[0].ColumnName.Equals("errormessage"))
             //{
 
