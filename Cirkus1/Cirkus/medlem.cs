@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Cirkus
 {
     [Serializable]
-    class medlem
+    public class medlem
     {
         public int medlemnr { get; set; }
         public string Förnamn { get; set; }

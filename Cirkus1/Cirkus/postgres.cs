@@ -53,7 +53,19 @@ namespace Cirkus
             
 
         }
-        public void sqlFråga (string psql)
+        public List<medlem> sqlFrågaDr()
+        {
+            _tablell= sqlFraga("select * from medlem");
+            
+            sqlFrågaDr = _tablell;
+            return _sqlfrågaDr;
+            //if (_tablell.Columns[0].ColumnName.Equals("errormessage"))
+            //{
+
+            //}
+            
+        }
+        public void sglfrågaEdit(string psql)
         {
             sqlFraga(psql);
         }

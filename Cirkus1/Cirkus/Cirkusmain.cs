@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Cirkus
 {
-    public partial class Form1 : Form
+    public partial class Cirkusmain : Form
     {
-        public Form1()
+        public List<medlem> medlem = new List<Cirkus.medlem>();
+        public Cirkusmain()
         {
             InitializeComponent();
         }
@@ -26,7 +27,8 @@ namespace Cirkus
         private void button1_Click(object sender, EventArgs e)
         {
             postgres test = new postgres();
-            test.sqlFråga("bajs");
+            medlem = test.sqlFrågaDr();
+            medlemLbox.DataSource = medlem;
 
         }
     }
