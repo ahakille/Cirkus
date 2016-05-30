@@ -25,9 +25,11 @@ namespace Cirkus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            postgres test = new postgres();
-            test.sqlFråga("bajs");
-
+           // postgres test = new postgres();
+            //test.sqlFråga("bajs");
+            medlem m = new medlem();
+            m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
+            
         }
     }
 }

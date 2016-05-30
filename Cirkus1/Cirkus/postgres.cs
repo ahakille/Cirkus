@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
+
 namespace Cirkus
 {
     public class postgres
@@ -58,20 +59,29 @@ namespace Cirkus
             sqlFraga(psql);
         }
 
-        public void SqlAdmin(string sql)
+        private void SqlNonQuery(string sql)
         {
             try
             {
+
                 _cmd = new NpgsqlCommand(sql, _conn);
+                _cmd.ExecuteNonQuery();
             }
             catch (NpgsqlException ex)
             {
-                return null;
+                
             }
+
             finally
             {
                 _conn.Close();
             }
         }
+
+        public void SqlAdmin(string sql)
+        {
+            SqlNonQuery(sql);
+        }
+
     }
 }
