@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
+
 namespace Cirkus
 {
     public class postgres
@@ -53,42 +54,34 @@ namespace Cirkus
             
 
         }
-        public List<medlem> hämtaMedlem()
-        {
-            _tablell= sqlFraga("select * from medlem");
-            List<medlem> medlem = new List<medlem>();
-            foreach (DataRow _tablell in _tablell.Rows)
-            {
-                medlem medl = new medlem();
-                medl.medlemnr = _tablell["id"].ToString(Convert.);
-                medl.Förnamn = _tablell["Förnamn"].ToString();
-            }
-             return medlem
-            //if (_tablell.Columns[0].ColumnName.Equals("errormessage"))
-            //{
-
-            //}
-            
-        }
-        public void sglfrågaEdit(string psql)
+        public void sqlFråga (string psql)
         {
             sqlFraga(psql);
         }
 
-        public void SqlAdmin(string sql)
+        private void SqlNonQuery(string sql)
         {
             try
             {
+
                 _cmd = new NpgsqlCommand(sql, _conn);
+                _cmd.ExecuteNonQuery();
             }
             catch (NpgsqlException ex)
             {
-              //  return null;
+                
             }
+
             finally
             {
                 _conn.Close();
             }
         }
+
+        public void SqlAdmin(string sql)
+        {
+            SqlNonQuery(sql);
+        }
+
     }
 }
