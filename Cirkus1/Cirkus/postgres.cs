@@ -36,8 +36,14 @@ namespace Cirkus
             }
             catch (NpgsqlException ex)
             {
-                //ska försöka bygga klart när erik visar
-                return null;
+                // Felhantering - Retunerar datatable 
+                DataColumn c1 = new DataColumn("Errormessage");
+                c1.DataType = System.Type.GetType("System.String");
+                _tablell.Columns.Add(c1);
+                DataRow rad = _tablell.NewRow();
+                rad[c1] = ex.Message;
+                _tablell.Rows.Add(rad);
+                return _tablell;
             }
             finally
             {
@@ -47,9 +53,9 @@ namespace Cirkus
             
 
         }
-        public void test()
+        public void sqlFråga (string psql)
         {
-            sqlFraga("select * from *");
+            sqlFraga(psql);
         }
 
         public void SqlAdmin(string sql)
