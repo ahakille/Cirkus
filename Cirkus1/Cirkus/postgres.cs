@@ -53,10 +53,17 @@ namespace Cirkus
             
 
         }
-        public DataTable sqlFrågaDr()
+        public List<medlem> hämtaMedlem()
         {
             _tablell= sqlFraga("select * from medlem");
-             return _tablell;
+            List<medlem> medlem = new List<medlem>();
+            foreach (DataRow _tablell in _tablell.Rows)
+            {
+                medlem medl = new medlem();
+                medl.medlemnr = _tablell["id"].ToString(Convert.);
+                medl.Förnamn = _tablell["Förnamn"].ToString();
+            }
+             return medlem
             //if (_tablell.Columns[0].ColumnName.Equals("errormessage"))
             //{
 

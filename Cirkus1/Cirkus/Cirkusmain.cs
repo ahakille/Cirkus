@@ -27,7 +27,7 @@ namespace Cirkus
         private void button1_Click(object sender, EventArgs e)
         {
             postgres test = new postgres();
-            DataTable _tabell = new DataTable();
+            //DataTable _tabell = new DataTable();
              _tabell=test.sqlFrågaDr();
             medlemLbox.DataSource = _tabell;
 
