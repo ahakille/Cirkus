@@ -26,7 +26,7 @@ namespace Cirkus
         private void button1_Click(object sender, EventArgs e)
         {
             postgres test = new postgres();
-            test.test();
+            test.sqlFråga("bajs");
 
         }
     }
