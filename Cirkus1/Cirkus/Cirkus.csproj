@@ -68,6 +68,7 @@
     <Compile Include="postgres.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Träningstillfälle.cs" />
     <EmbeddedResource Include="Cirkusmain.resx">
       <DependentUpon>Cirkusmain.cs</DependentUpon>
     </EmbeddedResource>
