@@ -52,6 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Error.cs" />
+    <Compile Include="Cirkusmedlem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cirkusmedlem.Designer.cs">
+      <DependentUpon>Cirkusmedlem.cs</DependentUpon>
+    </Compile>
     <Compile Include="medlem.cs" />
     <Compile Include="Cirkusmain.cs">
       <SubType>Form</SubType>
@@ -65,6 +71,9 @@
     <Compile Include="Träningstillfälle.cs" />
     <EmbeddedResource Include="Cirkusmain.resx">
       <DependentUpon>Cirkusmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cirkusmedlem.resx">
+      <DependentUpon>Cirkusmedlem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
