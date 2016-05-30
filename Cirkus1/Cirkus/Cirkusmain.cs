@@ -46,5 +46,12 @@ namespace Cirkus
             
             //test.sqlFråga("bajs");
         }
+
+        private void laggmedlemBt_Click(object sender, EventArgs e)
+        {
+            Cirkusmedlem läggtill = new Cirkusmedlem(); // form för lägga till medlem
+            läggtill.Owner = this; // Bestämmer huvudform
+            läggtill.ShowDialog(); // Öppnar form Lägg till medlem
+        }
     }
 }
