@@ -13,7 +13,7 @@ namespace Cirkus
 {
     public partial class Cirkusmain : Form
     {
-        public List<medlem> medlem = new List<Cirkus.medlem>();
+        //public List<medlem> medlem = new List<Cirkus.medlem>();
         public Cirkusmain()
         {
             InitializeComponent();
