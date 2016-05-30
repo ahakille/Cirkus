@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cirkus
 {
-       class medlem
+       public class medlem
     {
         public int Medlemnr { get; set; }
         public string Förnamn { get; set; }

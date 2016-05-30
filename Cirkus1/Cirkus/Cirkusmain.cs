@@ -13,7 +13,7 @@ namespace Cirkus
 {
     public partial class Cirkusmain : Form
     {
-        //public List<medlem> medlem = new List<Cirkus.medlem>();
+        public List<medlem> medlem = new List<medlem>();
         public Cirkusmain()
         {
             InitializeComponent();
@@ -35,6 +35,16 @@ namespace Cirkus
             medlem m = new medlem();
             m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            postgres test = new postgres();
+            //DataTable _tabell = new DataTable();
+             medlem=test.hämtamedlem("select * from medlem");
+            medlemLbox.DataSource = medlem;
+            
+            //test.sqlFråga("bajs");
         }
     }
 }

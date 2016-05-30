@@ -54,9 +54,23 @@ namespace Cirkus
             
 
         }
-        public void sqlFråga (string psql)
+        public List<medlem> hämtamedlem (string psql)
         {
+
             sqlFraga(psql);
+            List<medlem> medlem = new List<medlem>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr;
+                medlem medl = new medlem();
+                nr = dr["mednr"].ToString();
+                medl.Förnamn = dr["förnamn"].ToString();
+                medl.Efternamn = dr["efternamn"].ToString();
+                medl.Medlemnr = Convert.ToUInt16(nr);
+                medlem.Add(medl);
+            }          
+            return medlem;
+
         }
 
         private void SqlNonQuery(string sql)
