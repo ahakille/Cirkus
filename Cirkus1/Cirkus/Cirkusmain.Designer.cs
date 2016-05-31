@@ -36,6 +36,7 @@
             this.MedlNrLb = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.träningsgruppBT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -113,11 +114,22 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Efternamn";
             // 
+            // träningsgruppBT
+            // 
+            this.träningsgruppBT.Location = new System.Drawing.Point(695, 54);
+            this.träningsgruppBT.Name = "träningsgruppBT";
+            this.träningsgruppBT.Size = new System.Drawing.Size(95, 29);
+            this.träningsgruppBT.TabIndex = 8;
+            this.träningsgruppBT.Text = "Träningsgrupper";
+            this.träningsgruppBT.UseVisualStyleBackColor = true;
+            this.träningsgruppBT.Click += new System.EventHandler(this.träningsgruppBT_Click);
+            // 
             // Cirkusmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 453);
+            this.Controls.Add(this.träningsgruppBT);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.MedlNrLb);
@@ -144,6 +156,7 @@
         private System.Windows.Forms.Label MedlNrLb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button träningsgruppBT;
     }
 }
 

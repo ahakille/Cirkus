@@ -66,5 +66,12 @@ namespace Cirkus
             medlemLbox.DataSource = null;
             medlemLbox.DataSource = Medlem;
         }
+
+        private void träningsgruppBT_Click(object sender, EventArgs e)
+        {
+            Cirkusträningsgrupp läggtill = new Cirkusträningsgrupp(); // form för lägga till medlem
+            läggtill.Owner = this; // Bestämmer huvudform
+            läggtill.ShowDialog(); // Öppnar form Lägg till medlem
+        }
     }
 }
