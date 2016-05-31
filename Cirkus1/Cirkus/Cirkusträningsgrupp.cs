@@ -41,9 +41,9 @@ namespace Cirkus
             {
                 postgres db = new postgres();
                 postgres db2 = new postgres();
-                medlem= db.hämtamedlem("select * from medlem where mednr =( select medlem from ingåri where träningsgrupp ='"+aktuellgrupp.Gruppid+"') ");
+                medlem= db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='"+aktuellgrupp.Gruppid+"') ");
                 MedlmLbox.DataSource = medlem;
-                tränare= db2.hämtamedlem("select * from medlem where mednr =( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+                tränare= db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
                 tränareLbox.DataSource = tränare;
             }
         }

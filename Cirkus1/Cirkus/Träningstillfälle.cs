@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cirkus
 {
-    class Träningstillfälle
+    public class Träningstillfälle
     {
         public string Plats { get; set; }
         public string Datum { get; set; }

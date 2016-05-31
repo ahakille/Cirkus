@@ -54,7 +54,7 @@
             this.medlemLbox.FormattingEnabled = true;
             this.medlemLbox.Location = new System.Drawing.Point(33, 54);
             this.medlemLbox.Name = "medlemLbox";
-            this.medlemLbox.Size = new System.Drawing.Size(476, 147);
+            this.medlemLbox.Size = new System.Drawing.Size(482, 147);
             this.medlemLbox.TabIndex = 1;
             // 
             // label1
