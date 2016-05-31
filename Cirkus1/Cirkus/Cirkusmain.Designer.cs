@@ -116,7 +116,7 @@
             // 
             // träningsgruppBT
             // 
-            this.träningsgruppBT.Location = new System.Drawing.Point(695, 54);
+            this.träningsgruppBT.Location = new System.Drawing.Point(670, 54);
             this.träningsgruppBT.Name = "träningsgruppBT";
             this.träningsgruppBT.Size = new System.Drawing.Size(95, 29);
             this.träningsgruppBT.TabIndex = 8;

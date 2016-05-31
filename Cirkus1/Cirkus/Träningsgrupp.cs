@@ -27,5 +27,9 @@ namespace Cirkus
             postgres m = new postgres();
             m.SqlAdmin("");
         }
+        public override string ToString()
+        {
+            return Gruppid + " "+Gruppnamn;
+        }
     }
 }
