@@ -20,7 +20,12 @@ namespace Cirkus
             postgres m = new postgres();
             m.SqlAdmin("insert into träningsgrupp (namn) values ('" + Gruppnamn + "');");
             postgres t = new postgres();
-            t.SqlAdmin("select max(id) from träningsgrupp");
-    }
+            t.SqlAdmin("select max(gruppid) from träningsgrupp");
+        }
+        public void LäggTillTränare ()
+        {
+            postgres m = new postgres();
+            m.SqlAdmin("");
+        }
     }
 }
