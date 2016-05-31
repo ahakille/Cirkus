@@ -25,5 +25,6 @@ namespace Cirkus
             + plats + "', '" + tid + "', currval('träningstyp_id_seq'::regclass), '" + datum + "');");
 
         }
+
     }
 }
