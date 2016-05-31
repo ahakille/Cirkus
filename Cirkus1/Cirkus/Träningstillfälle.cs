@@ -21,8 +21,9 @@ namespace Cirkus
             Aktivitet = aktivitet;
 
             postgres m = new postgres();
-            m.SqlAdmin("insert into träningstyp (aktivitet) values ('" + aktivitet + "');");
-            postgres t = new postgres();
-            t.SqlAdmin("select max(id) from tränin") 
+            m.SqlAdmin("insert into träningstyp (aktivitet) values ('" + aktivitet + "'); insert into träningstillfälle (plats, tid, aktivtetsid, datum) values ('"
+            + plats + "', '" + tid + "', currval('träningstyp_id_seq'::regclass), '" + datum + "');");
+
+        }
     }
 }
