@@ -66,6 +66,8 @@ namespace Cirkus
                 nr = dr["mednr"].ToString();
                 medl.Förnamn = dr["förnamn"].ToString();
                 medl.Efternamn = dr["efternamn"].ToString();
+                string f = dr["födelsedata"].ToString();
+                medl.Födelsedata = Convert.ToUInt16(f);
                 medl.Medlemnr = Convert.ToUInt16(nr);
                 medlem.Add(medl);
             }          
