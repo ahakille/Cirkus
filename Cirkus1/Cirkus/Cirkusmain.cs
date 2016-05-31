@@ -41,13 +41,12 @@ namespace Cirkus
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Hämtar medlemslistan
             postgres test = new postgres();
-            //DataTable _tabell = new DataTable();
-             Medlem=test.hämtamedlem("select * from medlem");
+            Medlem=test.hämtamedlem("select * from medlem");
             medlemLbox.DataSource = Medlem;
             
-            //test.sqlFråga("bajs");
-        }
+         }
 
         private void laggmedlemBt_Click(object sender, EventArgs e)
         {
@@ -58,6 +57,7 @@ namespace Cirkus
 
         private void MedlNrLb_Click(object sender, EventArgs e)
         {
+            //sorterar medlemslistan i nummerordning
             Medlem.Sort(delegate (medlem x, medlem y)
             {
                  return x.Medlemnr.CompareTo(y.Medlemnr);
@@ -72,6 +72,18 @@ namespace Cirkus
             Cirkusträningsgrupp läggtill = new Cirkusträningsgrupp(); // form för lägga till medlem
             läggtill.Owner = this; // Bestämmer huvudform
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
+        }
+
+        private void förnamnLb_Click(object sender, EventArgs e)
+        {
+            //sorterar medlemslistan i bokstavsordning
+            Medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Förnamn.CompareTo(y.Förnamn);
+
+            });
+            medlemLbox.DataSource = null;
+            medlemLbox.DataSource = Medlem;
         }
     }
 }
