@@ -16,6 +16,7 @@ namespace Cirkus
         private NpgsqlCommand _cmd;
         private NpgsqlDataReader _dr;
         private DataTable _tablell;
+        private DataTable _tablell2;
 
         public postgres()
         {
@@ -62,12 +63,21 @@ namespace Cirkus
             foreach (DataRow dr in _tablell.Rows)
             {
                 string nr;
+                string f;
+                int i;
                 medlem medl = new medlem();
                 nr = dr["mednr"].ToString();
+                f = dr["födelsedata"].ToString();
                 medl.Förnamn = dr["förnamn"].ToString();
                 medl.Efternamn = dr["efternamn"].ToString();
-                string f = dr["födelsedata"].ToString();
-                medl.Födelsedata = Convert.ToUInt16(f);
+                if (Int32.TryParse(f, out i))
+                {
+                    medl.Födelsedata = i;
+                }
+                else
+                {
+                    medl.Födelsedata = 00000000;
+                }
                 medl.Medlemnr = Convert.ToUInt16(nr);
                 medlem.Add(medl);
             }          
@@ -89,6 +99,45 @@ namespace Cirkus
             }
             return tgrupp;
 
+        }
+        public List<Träningstillfälle> getTräningslista (string psql)
+        {
+            sqlFraga(psql);
+            List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr;
+                string a;
+                int i;
+                Träningstillfälle t = new Träningstillfälle();
+                nr = dr["id"].ToString();
+                t.Plats = dr["plats"].ToString();
+                t.Datum = dr["datum"].ToString();
+                t.Tid = dr["tid"].ToString();
+                a = dr["aktivtetid"].ToString();
+                t.Id = Convert.ToUInt16(nr);
+                t.AktivitetID = Convert.ToUInt16(a);
+                
+                sqlFraga("select * from träningstyp");
+                List<Träningstillfälle> typ = new List<Träningstillfälle>();
+                foreach (DataRow r in _tablell2.Rows)
+                {
+                    string y;
+                    int v;
+                    Träningstillfälle x = new Träningstillfälle();
+                    y = r["id"].ToString();
+                    x.Aktivitet = r["aktivitet"].ToString();
+                    x.IdTräningstyp = Convert.ToUInt16(y);
+
+                    if (x.IdTräningstyp == t.AktivitetID)
+                    {
+                        t.AktivitetID = x.AktivitetID;
+                        tillfälle.Add(t);
+                    }
+                }
+                
+            }
+            return tillfälle;
         }
         private void SqlNonQuery(string sql)
         {

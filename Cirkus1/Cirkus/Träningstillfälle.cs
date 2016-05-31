@@ -12,6 +12,9 @@ namespace Cirkus
         public string Datum { get; set; }
         public string Tid { get; set; }
         public string Aktivitet { get; set; }
+        public int AktivitetID { get; set; }
+        public int Id { get; set; }
+        public int IdTräningstyp { get; set; }
 
         public void LaggTillTräningstillfälle(string plats, string datum, string tid, string aktivitet)
         {
