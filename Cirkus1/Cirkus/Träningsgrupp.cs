@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cirkus
 {
-    class Träningsgrupp
+    public class Träningsgrupp
     {
         public int Gruppid { get; set; }
         public string Gruppnamn { get; set; }
