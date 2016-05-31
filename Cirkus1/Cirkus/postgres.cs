@@ -74,7 +74,22 @@ namespace Cirkus
             return medlem;
 
         }
+        public List<Träningsgrupp> hämtaträningsgrupp (string psql)
+        {
+            sqlFraga(psql);
+            List<Träningsgrupp> tgrupp = new List<Träningsgrupp>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr;
+                Träningsgrupp grupp = new Träningsgrupp();
+                nr = dr["gruppid"].ToString();
+                grupp.Gruppnamn= dr["namn"].ToString();
+                grupp.Gruppid = Convert.ToUInt16(nr);
+                tgrupp.Add(grupp);
+            }
+            return tgrupp;
 
+        }
         private void SqlNonQuery(string sql)
         {
             try

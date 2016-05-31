@@ -16,5 +16,12 @@ namespace Cirkus
         {
             InitializeComponent();
         }
+        void Fillcombo()
+        {
+            List<Träningsgrupp> grupp = new List<Träningsgrupp>();
+            postgres db = new postgres();
+            grupp=db.hämtaträningsgrupp("select * from träningsgrupp");
+            TräningsgruppCbox.DataSource = grupp;
+        }
     }
 }
