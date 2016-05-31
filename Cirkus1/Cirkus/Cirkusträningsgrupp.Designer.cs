@@ -40,12 +40,18 @@
             this.NymedlemCbox = new System.Windows.Forms.ComboBox();
             this.NytränareCbox = new System.Windows.Forms.ComboBox();
             this.abortBt = new System.Windows.Forms.Button();
+            this.EfterNamnLb = new System.Windows.Forms.Label();
+            this.förnamnLb = new System.Windows.Forms.Label();
+            this.MedlNrLb = new System.Windows.Forms.Label();
+            this.Mednr2Lb = new System.Windows.Forms.Label();
+            this.Förnamn2Lb = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // MedlmLbox
             // 
             this.MedlmLbox.FormattingEnabled = true;
-            this.MedlmLbox.Location = new System.Drawing.Point(41, 211);
+            this.MedlmLbox.Location = new System.Drawing.Point(41, 229);
             this.MedlmLbox.Name = "MedlmLbox";
             this.MedlmLbox.Size = new System.Drawing.Size(384, 186);
             this.MedlmLbox.TabIndex = 0;
@@ -71,7 +77,7 @@
             // 
             // NytränareBt
             // 
-            this.NytränareBt.Location = new System.Drawing.Point(350, 160);
+            this.NytränareBt.Location = new System.Drawing.Point(350, 168);
             this.NytränareBt.Name = "NytränareBt";
             this.NytränareBt.Size = new System.Drawing.Size(75, 23);
             this.NytränareBt.TabIndex = 3;
@@ -91,7 +97,7 @@
             // tränareLbox
             // 
             this.tränareLbox.FormattingEnabled = true;
-            this.tränareLbox.Location = new System.Drawing.Point(41, 74);
+            this.tränareLbox.Location = new System.Drawing.Point(41, 82);
             this.tränareLbox.Name = "tränareLbox";
             this.tränareLbox.Size = new System.Drawing.Size(384, 82);
             this.tränareLbox.TabIndex = 5;
@@ -108,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 61);
+            this.label3.Location = new System.Drawing.Point(38, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 7;
@@ -116,7 +122,7 @@
             // 
             // nymedlemBt
             // 
-            this.nymedlemBt.Location = new System.Drawing.Point(350, 401);
+            this.nymedlemBt.Location = new System.Drawing.Point(350, 419);
             this.nymedlemBt.Name = "nymedlemBt";
             this.nymedlemBt.Size = new System.Drawing.Size(75, 23);
             this.nymedlemBt.TabIndex = 8;
@@ -127,7 +133,7 @@
             // NymedlemCbox
             // 
             this.NymedlemCbox.FormattingEnabled = true;
-            this.NymedlemCbox.Location = new System.Drawing.Point(41, 403);
+            this.NymedlemCbox.Location = new System.Drawing.Point(41, 421);
             this.NymedlemCbox.Name = "NymedlemCbox";
             this.NymedlemCbox.Size = new System.Drawing.Size(303, 21);
             this.NymedlemCbox.TabIndex = 9;
@@ -136,7 +142,7 @@
             // NytränareCbox
             // 
             this.NytränareCbox.FormattingEnabled = true;
-            this.NytränareCbox.Location = new System.Drawing.Point(41, 162);
+            this.NytränareCbox.Location = new System.Drawing.Point(41, 170);
             this.NytränareCbox.Name = "NytränareCbox";
             this.NytränareCbox.Size = new System.Drawing.Size(303, 21);
             this.NytränareCbox.TabIndex = 10;
@@ -152,11 +158,75 @@
             this.abortBt.UseVisualStyleBackColor = true;
             this.abortBt.Click += new System.EventHandler(this.abortBt_Click);
             // 
+            // EfterNamnLb
+            // 
+            this.EfterNamnLb.AutoSize = true;
+            this.EfterNamnLb.Location = new System.Drawing.Point(161, 213);
+            this.EfterNamnLb.Name = "EfterNamnLb";
+            this.EfterNamnLb.Size = new System.Drawing.Size(55, 13);
+            this.EfterNamnLb.TabIndex = 31;
+            this.EfterNamnLb.Text = "Efternamn";
+            // 
+            // förnamnLb
+            // 
+            this.förnamnLb.AutoSize = true;
+            this.förnamnLb.Location = new System.Drawing.Point(106, 213);
+            this.förnamnLb.Name = "förnamnLb";
+            this.förnamnLb.Size = new System.Drawing.Size(48, 13);
+            this.förnamnLb.TabIndex = 30;
+            this.förnamnLb.Text = "Förnman";
+            this.förnamnLb.Click += new System.EventHandler(this.förnamnLb_Click);
+            // 
+            // MedlNrLb
+            // 
+            this.MedlNrLb.AutoSize = true;
+            this.MedlNrLb.Location = new System.Drawing.Point(42, 213);
+            this.MedlNrLb.Name = "MedlNrLb";
+            this.MedlNrLb.Size = new System.Drawing.Size(58, 13);
+            this.MedlNrLb.TabIndex = 29;
+            this.MedlNrLb.Text = "Medlemsnr";
+            this.MedlNrLb.Click += new System.EventHandler(this.MedlNrLb_Click);
+            // 
+            // Mednr2Lb
+            // 
+            this.Mednr2Lb.AutoSize = true;
+            this.Mednr2Lb.Location = new System.Drawing.Point(42, 66);
+            this.Mednr2Lb.Name = "Mednr2Lb";
+            this.Mednr2Lb.Size = new System.Drawing.Size(58, 13);
+            this.Mednr2Lb.TabIndex = 29;
+            this.Mednr2Lb.Text = "Medlemsnr";
+            this.Mednr2Lb.Click += new System.EventHandler(this.Mednr2Lb_Click);
+            // 
+            // Förnamn2Lb
+            // 
+            this.Förnamn2Lb.AutoSize = true;
+            this.Förnamn2Lb.Location = new System.Drawing.Point(106, 66);
+            this.Förnamn2Lb.Name = "Förnamn2Lb";
+            this.Förnamn2Lb.Size = new System.Drawing.Size(48, 13);
+            this.Förnamn2Lb.TabIndex = 30;
+            this.Förnamn2Lb.Text = "Förnman";
+            this.Förnamn2Lb.Click += new System.EventHandler(this.Förnamn2Lb_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(161, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Efternamn";
+            // 
             // Cirkusträningsgrupp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 449);
+            this.ClientSize = new System.Drawing.Size(461, 492);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.EfterNamnLb);
+            this.Controls.Add(this.Förnamn2Lb);
+            this.Controls.Add(this.Mednr2Lb);
+            this.Controls.Add(this.förnamnLb);
+            this.Controls.Add(this.MedlNrLb);
             this.Controls.Add(this.abortBt);
             this.Controls.Add(this.NytränareCbox);
             this.Controls.Add(this.NymedlemCbox);
@@ -190,5 +260,11 @@
         private System.Windows.Forms.ComboBox NymedlemCbox;
         private System.Windows.Forms.ComboBox NytränareCbox;
         private System.Windows.Forms.Button abortBt;
+        private System.Windows.Forms.Label EfterNamnLb;
+        private System.Windows.Forms.Label förnamnLb;
+        private System.Windows.Forms.Label MedlNrLb;
+        private System.Windows.Forms.Label Mednr2Lb;
+        private System.Windows.Forms.Label Förnamn2Lb;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -73,5 +73,16 @@ namespace Cirkus
             läggtill.Owner = this; // Bestämmer huvudform
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
         }
+
+        private void förnamnLb_Click(object sender, EventArgs e)
+        {
+            Medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Förnamn.CompareTo(y.Förnamn);
+
+            });
+            medlemLbox.DataSource = null;
+            medlemLbox.DataSource = Medlem;
+        }
     }
 }

@@ -34,8 +34,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.laggmedlemBt = new System.Windows.Forms.Button();
             this.MedlNrLb = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.förnamnLb = new System.Windows.Forms.Label();
+            this.EfterNamnLb = new System.Windows.Forms.Label();
             this.träningsgruppBT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -96,23 +96,24 @@
             this.MedlNrLb.Text = "Medlemsnr";
             this.MedlNrLb.Click += new System.EventHandler(this.MedlNrLb_Click);
             // 
-            // label3
+            // förnamnLb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(97, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Förnman";
+            this.förnamnLb.AutoSize = true;
+            this.förnamnLb.Location = new System.Drawing.Point(97, 38);
+            this.förnamnLb.Name = "förnamnLb";
+            this.förnamnLb.Size = new System.Drawing.Size(48, 13);
+            this.förnamnLb.TabIndex = 6;
+            this.förnamnLb.Text = "Förnman";
+            this.förnamnLb.Click += new System.EventHandler(this.förnamnLb_Click);
             // 
-            // label4
+            // EfterNamnLb
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(152, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Efternamn";
+            this.EfterNamnLb.AutoSize = true;
+            this.EfterNamnLb.Location = new System.Drawing.Point(152, 38);
+            this.EfterNamnLb.Name = "EfterNamnLb";
+            this.EfterNamnLb.Size = new System.Drawing.Size(55, 13);
+            this.EfterNamnLb.TabIndex = 7;
+            this.EfterNamnLb.Text = "Efternamn";
             // 
             // träningsgruppBT
             // 
@@ -130,8 +131,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 453);
             this.Controls.Add(this.träningsgruppBT);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.EfterNamnLb);
+            this.Controls.Add(this.förnamnLb);
             this.Controls.Add(this.MedlNrLb);
             this.Controls.Add(this.laggmedlemBt);
             this.Controls.Add(this.button2);
@@ -154,8 +155,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button laggmedlemBt;
         private System.Windows.Forms.Label MedlNrLb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label förnamnLb;
+        private System.Windows.Forms.Label EfterNamnLb;
         private System.Windows.Forms.Button träningsgruppBT;
     }
 }

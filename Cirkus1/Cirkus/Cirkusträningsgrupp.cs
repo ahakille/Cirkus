@@ -95,5 +95,49 @@ namespace Cirkus
             }
 
         }
+
+        private void förnamnLb_Click(object sender, EventArgs e)
+        {
+            medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Förnamn.CompareTo(y.Förnamn);
+
+            });
+            MedlmLbox.DataSource = null;
+            MedlmLbox.DataSource = medlem;
+        }
+
+        private void MedlNrLb_Click(object sender, EventArgs e)
+        {
+            medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Medlemnr.CompareTo(y.Medlemnr);
+
+            });
+            MedlmLbox.DataSource = null;
+            MedlmLbox.DataSource = medlem;
+        }
+
+        private void Mednr2Lb_Click(object sender, EventArgs e)
+        {
+            medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Medlemnr.CompareTo(y.Medlemnr);
+
+            });
+            tränareLbox.DataSource = null;
+            tränareLbox.DataSource = medlem;
+        }
+
+        private void Förnamn2Lb_Click(object sender, EventArgs e)
+        {
+            medlem.Sort(delegate (medlem x, medlem y)
+            {
+                return x.Förnamn.CompareTo(y.Förnamn);
+
+            });
+            tränareLbox.DataSource = null;
+            tränareLbox.DataSource = medlem;
+        }
     }
 }
