@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cirkus
 {
-    class Träningstillfälle
+    public class Träningstillfälle
     {
         public string Plats { get; set; }
         public string Datum { get; set; }
@@ -29,5 +29,12 @@ namespace Cirkus
 
         }
 
+        public override string ToString()
+        {
+            return "Plats: " + Plats + " Aktivitet: " + Aktivitet;
+        }
+
     }
+
+    
 }

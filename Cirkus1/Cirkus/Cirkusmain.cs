@@ -14,6 +14,7 @@ namespace Cirkus
     public partial class Cirkusmain : Form
     {
         public List<medlem> Medlem = new List<medlem>();
+        public List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         public Cirkusmain()
         {
             InitializeComponent();
@@ -34,8 +35,12 @@ namespace Cirkus
             //test.sqlFråga("bajs");
             // medlem m = new medlem();
             // m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
-            Träningstillfälle t = new Träningstillfälle();
-            t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
+            //Träningstillfälle t = new Träningstillfälle();
+            //t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
+
+            postgres t = new postgres();
+            tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id;");
+            medlemLbox.DataSource = tillfälle;
 
         }
 

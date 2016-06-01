@@ -16,7 +16,7 @@ namespace Cirkus
         private NpgsqlCommand _cmd;
         private NpgsqlDataReader _dr;
         private DataTable _tablell;
-        private DataTable _tablell2;
+        
 
         public postgres()
         {
@@ -24,7 +24,7 @@ namespace Cirkus
             _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
             _conn.Open();
             _tablell = new DataTable();
-            
+                        
             
         }
         private DataTable sqlFraga (string sql)
@@ -49,10 +49,10 @@ namespace Cirkus
             }
             finally
             {
-               _conn.Close();
+                _conn.Close();
             }
-                
-            
+
+
 
         }
         public List<medlem> hämtamedlem (string psql)
@@ -100,7 +100,7 @@ namespace Cirkus
             return tgrupp;
 
         }
-        public List<Träningstillfälle> getTräningslista (string psql)
+        public List<Träningstillfälle> hämtaTräningslista (string psql)
         {
             sqlFraga(psql);
             List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
@@ -108,34 +108,17 @@ namespace Cirkus
             {
                 string nr;
                 string a;
-                int i;
                 Träningstillfälle t = new Träningstillfälle();
                 nr = dr["id"].ToString();
                 t.Plats = dr["plats"].ToString();
                 t.Datum = dr["datum"].ToString();
                 t.Tid = dr["tid"].ToString();
-                a = dr["aktivtetid"].ToString();
+                t.Aktivitet = dr["aktivitet"].ToString();
+                a = dr["aktivtetsid"].ToString();
                 t.Id = Convert.ToUInt16(nr);
                 t.AktivitetID = Convert.ToUInt16(a);
-                
-                sqlFraga("select * from träningstyp");
-                List<Träningstillfälle> typ = new List<Träningstillfälle>();
-                foreach (DataRow r in _tablell2.Rows)
-                {
-                    string y;
-                    int v;
-                    Träningstillfälle x = new Träningstillfälle();
-                    y = r["id"].ToString();
-                    x.Aktivitet = r["aktivitet"].ToString();
-                    x.IdTräningstyp = Convert.ToUInt16(y);
-
-                    if (x.IdTräningstyp == t.AktivitetID)
-                    {
-                        t.AktivitetID = x.AktivitetID;
-                        tillfälle.Add(t);
-                    }
-                }
-                
+                tillfälle.Add(t);
+                          
             }
             return tillfälle;
         }
