@@ -14,9 +14,22 @@ namespace Cirkus
     {
         
         public string mednr { get; set; }
+        public string Förnamn { get; set; }
+        public string Efternamn { get; set; }
+        public int Födelsedata { get; set; }
+        public string Kön { get; set; }
+        public string Telefon { get; set; }
+        public string Mobilnr { get; set; }
+        public string Email { get; set; }
+        public string Gata { get; set; }
+        public string Postnr { get; set; }
+        public string Ort { get; set; }
+        public string Medlemstyp { get; set; }
+        public bool Foto { get; set; }
         public Cirkusupdatemedlem()
         {
             InitializeComponent();
+            
             postgres db = new postgres();
             
             
@@ -30,7 +43,7 @@ namespace Cirkus
         private void updateBt_Click(object sender, EventArgs e)
         {
               
-            emailTxt.Text = test2;
+            emailTxt.Text = mednr;
         }
     }
 }
