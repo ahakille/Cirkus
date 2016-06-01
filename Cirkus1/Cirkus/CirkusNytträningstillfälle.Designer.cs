@@ -31,7 +31,7 @@
             this.AvbrytBt = new System.Windows.Forms.Button();
             this.NyttträningstillfälleBt = new System.Windows.Forms.Button();
             this.CboxPlats = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date = new System.Windows.Forms.DateTimePicker();
             this.CboxTräningstyp = new System.Windows.Forms.ComboBox();
             this.CboxTräningsgrupper = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,11 +48,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.TxtBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AvbrytBt
             // 
-            this.AvbrytBt.Location = new System.Drawing.Point(413, 78);
+            this.AvbrytBt.Location = new System.Drawing.Point(452, 78);
             this.AvbrytBt.Name = "AvbrytBt";
             this.AvbrytBt.Size = new System.Drawing.Size(75, 23);
             this.AvbrytBt.TabIndex = 0;
@@ -62,7 +64,7 @@
             // 
             // NyttträningstillfälleBt
             // 
-            this.NyttträningstillfälleBt.Location = new System.Drawing.Point(324, 78);
+            this.NyttträningstillfälleBt.Location = new System.Drawing.Point(354, 76);
             this.NyttträningstillfälleBt.Name = "NyttträningstillfälleBt";
             this.NyttträningstillfälleBt.Size = new System.Drawing.Size(75, 23);
             this.NyttträningstillfälleBt.TabIndex = 1;
@@ -79,20 +81,21 @@
             "Cirkushallen"});
             this.CboxPlats.Location = new System.Drawing.Point(34, 35);
             this.CboxPlats.Name = "CboxPlats";
-            this.CboxPlats.Size = new System.Drawing.Size(121, 21);
+            this.CboxPlats.Size = new System.Drawing.Size(145, 21);
             this.CboxPlats.TabIndex = 2;
+            this.CboxPlats.SelectedIndexChanged += new System.EventHandler(this.CboxPlats_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.date.Location = new System.Drawing.Point(202, 32);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(152, 20);
+            this.date.TabIndex = 3;
             // 
             // CboxTräningstyp
             // 
             this.CboxTräningstyp.FormattingEnabled = true;
-            this.CboxTräningstyp.Location = new System.Drawing.Point(367, 34);
+            this.CboxTräningstyp.Location = new System.Drawing.Point(202, 78);
             this.CboxTräningstyp.Name = "CboxTräningstyp";
             this.CboxTräningstyp.Size = new System.Drawing.Size(121, 21);
             this.CboxTräningstyp.TabIndex = 4;
@@ -102,7 +105,7 @@
             this.CboxTräningsgrupper.FormattingEnabled = true;
             this.CboxTräningsgrupper.Location = new System.Drawing.Point(34, 78);
             this.CboxTräningsgrupper.Name = "CboxTräningsgrupper";
-            this.CboxTräningsgrupper.Size = new System.Drawing.Size(121, 21);
+            this.CboxTräningsgrupper.Size = new System.Drawing.Size(145, 21);
             this.CboxTräningsgrupper.TabIndex = 5;
             this.CboxTräningsgrupper.SelectedIndexChanged += new System.EventHandler(this.CboxTräningsgrupper_SelectedIndexChanged);
             // 
@@ -118,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 19);
+            this.label2.Location = new System.Drawing.Point(199, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 6;
@@ -127,11 +130,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(364, 18);
+            this.label3.Location = new System.Drawing.Point(202, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label1";
+            this.label3.Text = "Typ av aktivitet";
             // 
             // label4
             // 
@@ -231,11 +234,29 @@
             this.label8.TabIndex = 38;
             this.label8.Text = "Tillagda";
             // 
+            // TxtBox
+            // 
+            this.TxtBox.Location = new System.Drawing.Point(372, 35);
+            this.TxtBox.Name = "TxtBox";
+            this.TxtBox.Size = new System.Drawing.Size(100, 20);
+            this.TxtBox.TabIndex = 39;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(372, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Tid";
+            // 
             // CirkusNytträningstillfälle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 612);
+            this.ClientSize = new System.Drawing.Size(648, 410);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.TxtBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.EfterNamnLb);
@@ -252,7 +273,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboxTräningsgrupper);
             this.Controls.Add(this.CboxTräningstyp);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.CboxPlats);
             this.Controls.Add(this.NyttträningstillfälleBt);
             this.Controls.Add(this.AvbrytBt);
@@ -268,7 +289,7 @@
         private System.Windows.Forms.Button AvbrytBt;
         private System.Windows.Forms.Button NyttträningstillfälleBt;
         private System.Windows.Forms.ComboBox CboxPlats;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.ComboBox CboxTräningstyp;
         private System.Windows.Forms.ComboBox CboxTräningsgrupper;
         private System.Windows.Forms.Label label1;
@@ -285,5 +306,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TxtBox;
+        private System.Windows.Forms.Label label9;
     }
 }

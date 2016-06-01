@@ -16,6 +16,8 @@ namespace Cirkus
         List<medlem> medlem = new List<medlem>();
         medlem aktuellmedlem = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
+        private string Plats, tid;
+
 
         public CirkusNytträningstillfälle()
         {
@@ -27,7 +29,7 @@ namespace Cirkus
             postgres db = new postgres();
             grupp = db.hämtaträningsgrupp("select * from träningsgrupp");
             CboxTräningsgrupper.DataSource = grupp;
-            postgres db2 = new postgres();
+            
 
         }
 
@@ -46,12 +48,20 @@ namespace Cirkus
         {
             läggtillmedlemBt.Enabled = true;
             NyttträningstillfälleBt.Enabled = false;
-            
+            Träningstillfälle pt = new Träningstillfälle();
+            pt.LaggTillTräningstillfälle(CboxPlats.Text , "2016-06-22" ,TxtBox.Text , CboxTräningstyp.Text );
+            postgres db = new postgres();
+            db.SqlAdmin()
         }
 
         private void AvbrytBt_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CboxPlats_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

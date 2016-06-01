@@ -84,7 +84,7 @@ namespace Cirkus
                 {
                     t = "false";
                 }
-                medl.Foto = Convert.ToBoolean(t); 
+                 medl.Foto = Convert.ToBoolean(t); 
                 if (Int32.TryParse(f, out i))
                 {
                     medl.Födelsedata = i;

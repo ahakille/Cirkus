@@ -33,9 +33,20 @@ namespace Cirkus
 
         private void updateBt_Click(object sender, EventArgs e)
         {
-            
+            aktuellmedlem.Förnamn = fnamnTxt.Text;
+            aktuellmedlem.Efternamn = enamnTxt.Text;
+            födelsedataTxt.Text = Convert.ToString(aktuellmedlem.Födelsedata);
+            aktuellmedlem.Telefon = telefonTxt.Text;
+            aktuellmedlem.Mobilnr = mobilTxt.Text;
+            aktuellmedlem.Gata = gataTxt.Text;
+            aktuellmedlem.Postnr = postTxt.Text;
+            aktuellmedlem.Ort = ortTxt.Text;
+            aktuellmedlem.Email = emailTxt.Text;
+            aktuellmedlem.Kön = könCbox.Text;
+            aktuellmedlem.Medlemstyp = MedlemstypCbox.Text;
+            aktuellmedlem.Foto= fotoCbox.Checked;
 
-           
+
         }
 
         private void laggmedlemBt_Click(object sender, EventArgs e)
