@@ -41,7 +41,7 @@ namespace Cirkus
             //t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
 
             tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id; ");
-            medlemLbox.DataSource = tillfälle;
+            tillfälleBox.DataSource = tillfälle;
         }
 
         private void button2_Click(object sender, EventArgs e)
