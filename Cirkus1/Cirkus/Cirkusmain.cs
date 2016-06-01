@@ -14,6 +14,8 @@ namespace Cirkus
     public partial class Cirkusmain : Form
     {
         public List<medlem> Medlem = new List<medlem>();
+        medlem aktuellmedlem = new medlem();
+        public int Medlem2 { get; set; }
         public Cirkusmain()
         {
             InitializeComponent();
@@ -84,6 +86,34 @@ namespace Cirkus
             });
             medlemLbox.DataSource = null;
             medlemLbox.DataSource = Medlem;
+        }
+
+        private void narvaroBt_Click(object sender, EventArgs e)
+        {
+            CirkusNärvaror laggtill = new CirkusNärvaror();
+            laggtill.Owner = this;
+            laggtill.ShowDialog();
+        }
+
+        private void updateMedlemBt_Click(object sender, EventArgs e)
+        {
+          
+            Cirkusupdatemedlem läggtill = new Cirkusupdatemedlem(); // form för lägga till medlem
+            string test = aktuellmedlem.Förnamn;
+            läggtill.Owner = this; // Bestämmer huvudform
+            läggtill.ShowDialog(); // Öppnar form Lägg till medlem
+                    }
+        private void Uppdateramedlem()
+        {
+
+        }
+        private void medlemLbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuellmedlem = (medlem)medlemLbox.SelectedItem;
+            if (aktuellmedlem != null)
+            {
+
+            }
         }
     }
 }
