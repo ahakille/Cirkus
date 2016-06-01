@@ -14,6 +14,7 @@ namespace Cirkus
     public partial class Cirkusmain : Form
     {
         public List<medlem> Medlem = new List<medlem>();
+        public List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         medlem aktuellmedlem = new medlem();
         public string test { get; set; }
         public Cirkusmain()
@@ -28,7 +29,7 @@ namespace Cirkus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            postgres test = new postgres();
+            postgres t = new postgres();
             //DataTable _tabell = new DataTable();
             //   _tabell=test.sqlFrågaDr();
             // medlemLbox.DataSource = _tabell;
@@ -36,9 +37,11 @@ namespace Cirkus
             //test.sqlFråga("bajs");
             // medlem m = new medlem();
             // m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
-            Träningstillfälle t = new Träningstillfälle();
-            t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
+            //Träningstillfälle t = new Träningstillfälle();
+            //t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
 
+            tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id; ");
+            medlemLbox.DataSource = tillfälle;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -100,7 +103,7 @@ namespace Cirkus
           
             Cirkusupdatemedlem läggtill = new Cirkusupdatemedlem(); // form för lägga till medlem
             test = aktuellmedlem.Förnamn;
-            läggtill.test2 = aktuellmedlem.Förnamn;
+           // läggtill.test2 = aktuellmedlem.Förnamn;
       //      läggtill.Owner = this; // Bestämmer huvudform
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
                     }
