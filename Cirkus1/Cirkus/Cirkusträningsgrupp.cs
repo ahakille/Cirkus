@@ -60,7 +60,7 @@ namespace Cirkus
         private void nymedlemBt_Click(object sender, EventArgs e)
         {
             postgres db = new postgres();
-            MessageBox.Show("" + aktuellmedlem.Medlemnr + aktuellgrupp.Gruppid);
+            
             db.SqlAdmin("insert into ingåri(medlem,träningsgrupp) values('" + aktuellmedlem.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
         }
 
