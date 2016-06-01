@@ -100,7 +100,7 @@ namespace Cirkus
           
             Cirkusupdatemedlem läggtill = new Cirkusupdatemedlem(); // form för lägga till medlem
             test = aktuellmedlem.Förnamn;
-            läggtill.test2 = aktuellmedlem.Förnamn;
+            läggtill.mednr= aktuellmedlem.Förnamn;
       //      läggtill.Owner = this; // Bestämmer huvudform
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
                     }
