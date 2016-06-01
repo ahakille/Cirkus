@@ -37,6 +37,9 @@
             this.förnamnLb = new System.Windows.Forms.Label();
             this.EfterNamnLb = new System.Windows.Forms.Label();
             this.träningsgruppBT = new System.Windows.Forms.Button();
+            this.narvaroBt = new System.Windows.Forms.Button();
+            this.updateMedlemBt = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -54,8 +57,9 @@
             this.medlemLbox.FormattingEnabled = true;
             this.medlemLbox.Location = new System.Drawing.Point(33, 54);
             this.medlemLbox.Name = "medlemLbox";
-            this.medlemLbox.Size = new System.Drawing.Size(476, 147);
+            this.medlemLbox.Size = new System.Drawing.Size(482, 147);
             this.medlemLbox.TabIndex = 1;
+            this.medlemLbox.SelectedIndexChanged += new System.EventHandler(this.medlemLbox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -78,9 +82,9 @@
             // 
             // laggmedlemBt
             // 
-            this.laggmedlemBt.Location = new System.Drawing.Point(114, 207);
+            this.laggmedlemBt.Location = new System.Drawing.Point(643, 54);
             this.laggmedlemBt.Name = "laggmedlemBt";
-            this.laggmedlemBt.Size = new System.Drawing.Size(92, 23);
+            this.laggmedlemBt.Size = new System.Drawing.Size(122, 23);
             this.laggmedlemBt.TabIndex = 4;
             this.laggmedlemBt.Text = "Lägg till medlem";
             this.laggmedlemBt.UseVisualStyleBackColor = true;
@@ -117,19 +121,51 @@
             // 
             // träningsgruppBT
             // 
-            this.träningsgruppBT.Location = new System.Drawing.Point(670, 54);
+            this.träningsgruppBT.Location = new System.Drawing.Point(643, 235);
             this.träningsgruppBT.Name = "träningsgruppBT";
-            this.träningsgruppBT.Size = new System.Drawing.Size(95, 29);
+            this.träningsgruppBT.Size = new System.Drawing.Size(122, 29);
             this.träningsgruppBT.TabIndex = 8;
             this.träningsgruppBT.Text = "Träningsgrupper";
             this.träningsgruppBT.UseVisualStyleBackColor = true;
             this.träningsgruppBT.Click += new System.EventHandler(this.träningsgruppBT_Click);
+            // 
+            // narvaroBt
+            // 
+            this.narvaroBt.Location = new System.Drawing.Point(643, 299);
+            this.narvaroBt.Name = "narvaroBt";
+            this.narvaroBt.Size = new System.Drawing.Size(95, 23);
+            this.narvaroBt.TabIndex = 9;
+            this.narvaroBt.Text = "Närvarokort";
+            this.narvaroBt.UseVisualStyleBackColor = true;
+            this.narvaroBt.Click += new System.EventHandler(this.narvaroBt_Click);
+            // 
+            // updateMedlemBt
+            // 
+            this.updateMedlemBt.Location = new System.Drawing.Point(643, 83);
+            this.updateMedlemBt.Name = "updateMedlemBt";
+            this.updateMedlemBt.Size = new System.Drawing.Size(122, 23);
+            this.updateMedlemBt.TabIndex = 10;
+            this.updateMedlemBt.Text = "Uppdatera medlem";
+            this.updateMedlemBt.UseVisualStyleBackColor = true;
+            this.updateMedlemBt.Click += new System.EventHandler(this.updateMedlemBt_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(643, 113);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Ta bort medlem";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Cirkusmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 453);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.updateMedlemBt);
+            this.Controls.Add(this.narvaroBt);
             this.Controls.Add(this.träningsgruppBT);
             this.Controls.Add(this.EfterNamnLb);
             this.Controls.Add(this.förnamnLb);
@@ -158,6 +194,9 @@
         private System.Windows.Forms.Label förnamnLb;
         private System.Windows.Forms.Label EfterNamnLb;
         private System.Windows.Forms.Button träningsgruppBT;
+        private System.Windows.Forms.Button narvaroBt;
+        private System.Windows.Forms.Button updateMedlemBt;
+        private System.Windows.Forms.Button button4;
     }
 }
 

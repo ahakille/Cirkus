@@ -14,7 +14,8 @@ namespace Cirkus
     public partial class Cirkusmain : Form
     {
         public List<medlem> Medlem = new List<medlem>();
-        public List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
+        medlem aktuellmedlem = new medlem();
+        public string test { get; set; }
         public Cirkusmain()
         {
             InitializeComponent();
@@ -35,12 +36,8 @@ namespace Cirkus
             //test.sqlFråga("bajs");
             // medlem m = new medlem();
             // m.LaggTillMedlem("Erik", "Ö", 18791121, "Man", "1264654", "6468798", "afate@åskgf.dt", "gf", "87869", "sdgsd", "Prova-på", true);
-            //Träningstillfälle t = new Träningstillfälle();
-            //t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
-
-            postgres t = new postgres();
-            tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id;");
-            medlemLbox.DataSource = tillfälle;
+            Träningstillfälle t = new Träningstillfälle();
+            t.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
 
         }
 
@@ -89,6 +86,35 @@ namespace Cirkus
             });
             medlemLbox.DataSource = null;
             medlemLbox.DataSource = Medlem;
+        }
+
+        private void narvaroBt_Click(object sender, EventArgs e)
+        {
+            CirkusNärvaror laggtill = new CirkusNärvaror();
+            laggtill.Owner = this;
+            laggtill.ShowDialog();
+        }
+
+        private void updateMedlemBt_Click(object sender, EventArgs e)
+        {
+          
+            Cirkusupdatemedlem läggtill = new Cirkusupdatemedlem(); // form för lägga till medlem
+            test = aktuellmedlem.Förnamn;
+            läggtill.test2 = aktuellmedlem.Förnamn;
+      //      läggtill.Owner = this; // Bestämmer huvudform
+            läggtill.ShowDialog(); // Öppnar form Lägg till medlem
+                    }
+        private void Uppdateramedlem()
+        {
+
+        }
+        private void medlemLbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuellmedlem = (medlem)medlemLbox.SelectedItem;
+            if (aktuellmedlem != null)
+            {
+                
+            }
         }
     }
 }
