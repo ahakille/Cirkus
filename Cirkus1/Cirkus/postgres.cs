@@ -65,11 +65,26 @@ namespace Cirkus
                 string nr;
                 string f;
                 int i;
+                
                 medlem medl = new medlem();
                 nr = dr["mednr"].ToString();
                 f = dr["födelsedata"].ToString();
                 medl.Förnamn = dr["förnamn"].ToString();
                 medl.Efternamn = dr["efternamn"].ToString();
+                medl.Gata = dr["gata"].ToString();
+                medl.Postnr = dr["postnr"].ToString();
+                medl.Ort = dr["ort"].ToString();
+                medl.Email = dr["email"].ToString();
+                medl.Telefon = dr["telefon"].ToString();
+                medl.Mobilnr = dr["mobilnr"].ToString();
+                medl.Kön = dr["kön"].ToString();
+                medl.Medlemstyp = dr["medtyp"].ToString();
+                string t =dr["foto"].ToString();
+                if(t == "")
+                {
+                    t = "false";
+                }
+                medl.Foto = Convert.ToBoolean(t); 
                 if (Int32.TryParse(f, out i))
                 {
                     medl.Födelsedata = i;

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CirkusNytträningstillfälle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CirkusNytträningstillfälle.Designer.cs">
+      <DependentUpon>CirkusNytträningstillfälle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cirkusträningsgrupp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cirkusmedlem.resx">
       <DependentUpon>Cirkusmedlem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CirkusNytträningstillfälle.resx">
+      <DependentUpon>CirkusNytträningstillfälle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cirkusträningsgrupp.resx">
       <DependentUpon>Cirkusträningsgrupp.cs</DependentUpon>
