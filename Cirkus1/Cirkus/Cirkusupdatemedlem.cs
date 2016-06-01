@@ -13,10 +13,13 @@ namespace Cirkus
     public partial class Cirkusupdatemedlem : Form
     {
         
-        public string medlem { get; set; }
+        public string mednr { get; set; }
         public Cirkusupdatemedlem()
         {
             InitializeComponent();
+            postgres db = new postgres();
+            
+            
         }
         
         private void abortBt_Click(object sender, EventArgs e)
@@ -26,7 +29,8 @@ namespace Cirkus
 
         private void updateBt_Click(object sender, EventArgs e)
         {
-
+              
+            emailTxt.Text = test2;
         }
     }
 }

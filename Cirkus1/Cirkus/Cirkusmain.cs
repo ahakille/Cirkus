@@ -15,7 +15,7 @@ namespace Cirkus
     {
         public List<medlem> Medlem = new List<medlem>();
         medlem aktuellmedlem = new medlem();
-        public int Medlem2 { get; set; }
+        public string test { get; set; }
         public Cirkusmain()
         {
             InitializeComponent();
@@ -99,8 +99,9 @@ namespace Cirkus
         {
           
             Cirkusupdatemedlem läggtill = new Cirkusupdatemedlem(); // form för lägga till medlem
-            string test = aktuellmedlem.Förnamn;
-            läggtill.Owner = this; // Bestämmer huvudform
+            test = aktuellmedlem.Förnamn;
+            läggtill.test2 = aktuellmedlem.Förnamn;
+      //      läggtill.Owner = this; // Bestämmer huvudform
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
                     }
         private void Uppdateramedlem()
@@ -112,7 +113,7 @@ namespace Cirkus
             aktuellmedlem = (medlem)medlemLbox.SelectedItem;
             if (aktuellmedlem != null)
             {
-
+                
             }
         }
     }

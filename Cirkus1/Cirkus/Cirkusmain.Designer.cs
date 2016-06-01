@@ -131,7 +131,7 @@
             // 
             // narvaroBt
             // 
-            this.narvaroBt.Location = new System.Drawing.Point(616, 307);
+            this.narvaroBt.Location = new System.Drawing.Point(643, 299);
             this.narvaroBt.Name = "narvaroBt";
             this.narvaroBt.Size = new System.Drawing.Size(95, 23);
             this.narvaroBt.TabIndex = 9;
