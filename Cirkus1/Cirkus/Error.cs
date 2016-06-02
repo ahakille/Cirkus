@@ -9,6 +9,6 @@ namespace Cirkus
     class Error
     {
         public string Errormessage { get; set; }
-        
+        //
     }
 }
