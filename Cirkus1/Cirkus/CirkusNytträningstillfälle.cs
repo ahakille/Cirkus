@@ -51,7 +51,7 @@ namespace Cirkus
             Träningstillfälle pt = new Träningstillfälle();
             pt.LaggTillTräningstillfälle(CboxPlats.Text , "2016-06-22" ,TxtBox.Text , CboxTräningstyp.Text );
             postgres db = new postgres();
-            db.SqlAdmin()
+            db.SqlAdmin("insert into deltar (träningsgrupp) values ('" + aktuellgrupp.Gruppid + "'); insert into deltar (träningstillfalle) values currval('träningstillfälle_id_seq'::regclass)");
         }
 
         private void AvbrytBt_Click(object sender, EventArgs e)
