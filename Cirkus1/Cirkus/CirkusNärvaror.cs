@@ -15,7 +15,7 @@ namespace Cirkus
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
         List<medlem> medlem = new List<medlem>();
         List<medlem> tränare = new List<medlem>();
-        List<Träningstillfälle> tilfälle = new List<Träningstillfälle>();
+        List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         medlem aktuellmedlem = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
         public CirkusNärvaror()
@@ -53,7 +53,9 @@ namespace Cirkus
             if (aktuellmedlem !=null)
             {
                 postgres db = new postgres();
-              //  tilfälle = db.hämtaTräningslista("select id,plats,datum,tid from träningstillfälle where id in( select medlem from deltar where medlem ='"+aktuellmedlem.Medlemnr+"' and träningsgrupp ='"+aktuellgrupp.Gruppid+"')");
+                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, deltar d, träningstyp a where t.aktivtetsid = a.id  and  d.medlem ='"+aktuellmedlem.Medlemnr+"' and d.träningsgrupp ='"+aktuellgrupp.Gruppid+"'");
+                LboxAktivitet.DataSource = null;
+                LboxAktivitet.DataSource = tillfälle;
             }
         }
     }
