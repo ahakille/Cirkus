@@ -54,9 +54,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_med = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbl_aktiv = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.LboxLedare = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -313,14 +313,14 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Tid";
             // 
-            // label14
+            // lbl_med
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(347, 475);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "label6";
+            this.lbl_med.AutoSize = true;
+            this.lbl_med.Location = new System.Drawing.Point(27, 455);
+            this.lbl_med.Name = "lbl_med";
+            this.lbl_med.Size = new System.Drawing.Size(35, 13);
+            this.lbl_med.TabIndex = 11;
+            this.lbl_med.Text = "label6";
             // 
             // label15
             // 
@@ -331,14 +331,14 @@
             this.label15.TabIndex = 11;
             this.label15.Text = "label6";
             // 
-            // label16
+            // lbl_aktiv
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(454, 475);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 13);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "label6";
+            this.lbl_aktiv.AutoSize = true;
+            this.lbl_aktiv.Location = new System.Drawing.Point(351, 455);
+            this.lbl_aktiv.Name = "lbl_aktiv";
+            this.lbl_aktiv.Size = new System.Drawing.Size(35, 13);
+            this.lbl_aktiv.TabIndex = 11;
+            this.lbl_aktiv.Text = "label6";
             // 
             // label17
             // 
@@ -399,10 +399,10 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lbl_aktiv);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lbl_med);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Lbhuvud);
             this.Controls.Add(this.label6);
@@ -453,9 +453,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_med;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbl_aktiv;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ListBox LboxLedare;
         private System.Windows.Forms.Label label18;

@@ -61,6 +61,14 @@ namespace Cirkus
             LbLäggtillgrupp.Text = "Grupper";
             _fleraträningsgrupper = false;
             BtGruppLäggtill.Enabled = true;
+
+            int i = 0;
+            foreach(medlem m in medlem)
+            {
+                i++;
+            }
+
+            lbl_med.Text = "Antal deltagare: " + i;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +97,14 @@ namespace Cirkus
       
                 LboxAktivitet.DataSource = null;
                 LboxAktivitet.DataSource = tillfälle;
+
+                int i = 0;
+                foreach (Träningstillfälle t in tillfälle)
+                {
+                    i++;
+                }
+
+                lbl_aktiv.Text = "Antal träningstillfällen: " + i;
             }
         }
 
