@@ -15,6 +15,7 @@ namespace Cirkus
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
         List<medlem> medlem = new List<medlem>();
         List<medlem> tränare = new List<medlem>();
+        List<medlem> tränare2 = new List<medlem>();
         List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         medlem aktuellmedlem = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
@@ -28,6 +29,8 @@ namespace Cirkus
             postgres db = new postgres();
             grupp = db.hämtaträningsgrupp("select * from träningsgrupp");
             CboxTräningsgrupp.DataSource = grupp;
+            postgres db2 = new postgres();
+            tränare2 = db2.hämtamedlem("");
         }
 
         private void BtGruppsök_Click(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace Cirkus
             LboxMedlem.DataSource = medlem;
             tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
             LboxLedare.DataSource = tränare;
+            Lbhuvud.Text = "Träningsgrupp";
             LbGrupp.Text = aktuellgrupp.Gruppnamn;
         }
 
@@ -57,6 +61,23 @@ namespace Cirkus
                 LboxAktivitet.DataSource = null;
                 LboxAktivitet.DataSource = tillfälle;
             }
+        }
+
+        private void Btstäng_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BtSökledare_Click(object sender, EventArgs e)
+        {
+            Lbhuvud.Text = "Tränare";
+            LbGrupp.Text = aktuellmedlem.Förnamn +" "+ aktuellmedlem.Efternamn;
+        }
+
+        private void Cboxledare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuellmedlem = (medlem)Cboxledare.SelectedItem;
+
         }
     }
 }

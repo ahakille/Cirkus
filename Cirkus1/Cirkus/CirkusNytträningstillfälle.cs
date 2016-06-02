@@ -15,10 +15,11 @@ namespace Cirkus
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
         List<medlem> medlem = new List<medlem>();
         List<medlem> tillagda = new List<medlem>();
+        List<medlem> tränare = new List<medlem>();
+        List<medlem> tränarecbox = new List<medlem>();
+        medlem aktuelltränare = new medlem();
         medlem aktuellmedlem = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
-        private string Plats, tid;
-
 
         public CirkusNytträningstillfälle()
         {
@@ -39,9 +40,7 @@ namespace Cirkus
             aktuellgrupp = (Träningsgrupp)CboxTräningsgrupper.SelectedItem;
             if (aktuellgrupp != null)
             {
-                postgres db = new postgres();
-                medlem = db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
-                MedlmLbox.DataSource = medlem;
+                
             }
         }
 
@@ -61,6 +60,14 @@ namespace Cirkus
                 NyttträningstillfälleBt.Enabled = false;
                 Träningstillfälle pt = new Träningstillfälle();
                 pt.LaggTillTräningstillfälle(CboxPlats.Text, TxtBdatum.Text, TxtBox.Text, TxtTypav.Text);
+                Cboxtränare.Enabled = true;
+                BtNytrännare.Enabled = true;
+                postgres db = new postgres();
+                tränarecbox = db.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "')");
+                Cboxtränare.DataSource = tränarecbox;
+                postgres db2 = new postgres();
+                medlem = db2.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+                MedlmLbox.DataSource = medlem;
             }
 
 
@@ -97,10 +104,21 @@ namespace Cirkus
         private void MedlmLbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             aktuellmedlem = (medlem)MedlmLbox.SelectedItem;
-            if (aktuellmedlem != null)
-            {
+        }
 
-            }
+        private void BtNytrännare_Click(object sender, EventArgs e)
+        {
+            postgres db = new postgres();
+            tränare.Add(aktuelltränare);
+            LboxTränare.DataSource = null;
+            LboxTränare.DataSource = tränare;
+            db.SqlAdmin("insert into leder(medlem,träningstillfälle) values('" + aktuelltränare.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            
+        }
+
+        private void Cboxtränare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuelltränare = (medlem)Cboxtränare.SelectedItem;
         }
 
         private void BtFinish_Click(object sender, EventArgs e)

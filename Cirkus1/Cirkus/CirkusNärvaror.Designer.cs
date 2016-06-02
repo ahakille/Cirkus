@@ -49,7 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Lbhuvud = new System.Windows.Forms.Label();
             this.LboxAktivitet = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@
             this.LboxLedare = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
             this.LbGrupp = new System.Windows.Forms.Label();
+            this.Btstäng = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,6 +99,7 @@
             this.Cboxledare.Name = "Cboxledare";
             this.Cboxledare.Size = new System.Drawing.Size(121, 21);
             this.Cboxledare.TabIndex = 4;
+            this.Cboxledare.SelectedIndexChanged += new System.EventHandler(this.Cboxledare_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -167,6 +169,7 @@
             this.BtSökledare.TabIndex = 6;
             this.BtSökledare.Text = "Sök";
             this.BtSökledare.UseVisualStyleBackColor = true;
+            this.BtSökledare.Click += new System.EventHandler(this.BtSökledare_Click);
             // 
             // BtGruppLäggtill
             // 
@@ -264,14 +267,14 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Förelsedatum";
             // 
-            // label10
+            // Lbhuvud
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Träningsgrupp";
+            this.Lbhuvud.AutoSize = true;
+            this.Lbhuvud.Location = new System.Drawing.Point(22, 134);
+            this.Lbhuvud.Name = "Lbhuvud";
+            this.Lbhuvud.Size = new System.Drawing.Size(75, 13);
+            this.Lbhuvud.TabIndex = 11;
+            this.Lbhuvud.Text = "Träningsgrupp";
             // 
             // LboxAktivitet
             // 
@@ -371,11 +374,22 @@
             this.LbGrupp.TabIndex = 13;
             this.LbGrupp.Text = "                  ";
             // 
+            // Btstäng
+            // 
+            this.Btstäng.Location = new System.Drawing.Point(658, 518);
+            this.Btstäng.Name = "Btstäng";
+            this.Btstäng.Size = new System.Drawing.Size(75, 23);
+            this.Btstäng.TabIndex = 14;
+            this.Btstäng.Text = "Stäng närvarokort";
+            this.Btstäng.UseVisualStyleBackColor = true;
+            this.Btstäng.Click += new System.EventHandler(this.Btstäng_Click);
+            // 
             // CirkusNärvaror
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 553);
+            this.Controls.Add(this.Btstäng);
             this.Controls.Add(this.LbGrupp);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label9);
@@ -388,7 +402,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Lbhuvud);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -432,7 +446,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Lbhuvud;
         private System.Windows.Forms.ListBox LboxAktivitet;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -444,5 +458,6 @@
         private System.Windows.Forms.ListBox LboxLedare;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label LbGrupp;
+        private System.Windows.Forms.Button Btstäng;
     }
 }
