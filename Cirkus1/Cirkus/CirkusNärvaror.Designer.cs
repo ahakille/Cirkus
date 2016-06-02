@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.LboxMedlem = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BtSökdatum = new System.Windows.Forms.Button();
+            this.TxtboxTill = new System.Windows.Forms.TextBox();
+            this.Cboxledare = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBoxFrån = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtSökledare = new System.Windows.Forms.Button();
+            this.BtGruppLäggtill = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.CboxTräningsgrupp = new System.Windows.Forms.ComboBox();
+            this.BtGruppsök = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.LbLäggtillgrupp = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,30 +73,31 @@
             this.LboxMedlem.Name = "LboxMedlem";
             this.LboxMedlem.Size = new System.Drawing.Size(319, 173);
             this.LboxMedlem.TabIndex = 0;
+            this.LboxMedlem.SelectedIndexChanged += new System.EventHandler(this.LboxMedlem_SelectedIndexChanged);
             // 
-            // button1
+            // BtSökdatum
             // 
-            this.button1.Location = new System.Drawing.Point(145, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Sök";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtSökdatum.Location = new System.Drawing.Point(145, 65);
+            this.BtSökdatum.Name = "BtSökdatum";
+            this.BtSökdatum.Size = new System.Drawing.Size(75, 23);
+            this.BtSökdatum.TabIndex = 2;
+            this.BtSökdatum.Text = "Sök";
+            this.BtSökdatum.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // TxtboxTill
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.TxtboxTill.Location = new System.Drawing.Point(120, 39);
+            this.TxtboxTill.Name = "TxtboxTill";
+            this.TxtboxTill.Size = new System.Drawing.Size(100, 20);
+            this.TxtboxTill.TabIndex = 3;
             // 
-            // comboBox1
+            // Cboxledare
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.Cboxledare.FormattingEnabled = true;
+            this.Cboxledare.Location = new System.Drawing.Point(6, 35);
+            this.Cboxledare.Name = "Cboxledare";
+            this.Cboxledare.Size = new System.Drawing.Size(121, 21);
+            this.Cboxledare.TabIndex = 4;
             // 
             // label1
             // 
@@ -125,19 +126,19 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Till";
             // 
-            // textBox1
+            // TxtBoxFrån
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.TxtBoxFrån.Location = new System.Drawing.Point(17, 39);
+            this.TxtBoxFrån.Name = "TxtBoxFrån";
+            this.TxtBoxFrån.Size = new System.Drawing.Size(100, 20);
+            this.TxtBoxFrån.TabIndex = 3;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TxtBoxFrån);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.TxtboxTill);
+            this.groupBox1.Controls.Add(this.BtSökdatum);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(337, 12);
             this.groupBox1.Name = "groupBox1";
@@ -148,9 +149,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.BtSökledare);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.Cboxledare);
             this.groupBox2.Location = new System.Drawing.Point(592, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(166, 100);
@@ -158,31 +159,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sök på specifik ledare";
             // 
-            // button2
+            // BtSökledare
             // 
-            this.button2.Location = new System.Drawing.Point(51, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sök";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtSökledare.Location = new System.Drawing.Point(51, 63);
+            this.BtSökledare.Name = "BtSökledare";
+            this.BtSökledare.Size = new System.Drawing.Size(75, 23);
+            this.BtSökledare.TabIndex = 6;
+            this.BtSökledare.Text = "Sök";
+            this.BtSökledare.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtGruppLäggtill
             // 
-            this.button3.Location = new System.Drawing.Point(134, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Läggtill";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtGruppLäggtill.Location = new System.Drawing.Point(134, 33);
+            this.BtGruppLäggtill.Name = "BtGruppLäggtill";
+            this.BtGruppLäggtill.Size = new System.Drawing.Size(75, 23);
+            this.BtGruppLäggtill.TabIndex = 9;
+            this.BtGruppLäggtill.Text = "Läggtill";
+            this.BtGruppLäggtill.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.LbLäggtillgrupp);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.BtGruppsök);
+            this.groupBox3.Controls.Add(this.CboxTräningsgrupp);
+            this.groupBox3.Controls.Add(this.BtGruppLäggtill);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(309, 100);
@@ -190,22 +191,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sök träningsgrupper";
             // 
-            // comboBox2
+            // CboxTräningsgrupp
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(7, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 0;
+            this.CboxTräningsgrupp.FormattingEnabled = true;
+            this.CboxTräningsgrupp.Location = new System.Drawing.Point(7, 35);
+            this.CboxTräningsgrupp.Name = "CboxTräningsgrupp";
+            this.CboxTräningsgrupp.Size = new System.Drawing.Size(121, 21);
+            this.CboxTräningsgrupp.TabIndex = 0;
+            this.CboxTräningsgrupp.SelectedIndexChanged += new System.EventHandler(this.CboxTräningsgrupp_SelectedIndexChanged);
             // 
-            // button4
+            // BtGruppsök
             // 
-            this.button4.Location = new System.Drawing.Point(216, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Sök";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtGruppsök.Location = new System.Drawing.Point(216, 33);
+            this.BtGruppsök.Name = "BtGruppsök";
+            this.BtGruppsök.Size = new System.Drawing.Size(75, 23);
+            this.BtGruppsök.TabIndex = 10;
+            this.BtGruppsök.Text = "Sök";
+            this.BtGruppsök.UseVisualStyleBackColor = true;
+            this.BtGruppsök.Click += new System.EventHandler(this.BtGruppsök_Click);
             // 
             // label4
             // 
@@ -331,7 +334,6 @@
             this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 11;
             this.label16.Text = "label6";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -362,9 +364,10 @@
             // LbGrupp
             // 
             this.LbGrupp.AutoSize = true;
-            this.LbGrupp.Location = new System.Drawing.Point(22, 156);
+            this.LbGrupp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbGrupp.Location = new System.Drawing.Point(29, 156);
             this.LbGrupp.Name = "LbGrupp";
-            this.LbGrupp.Size = new System.Drawing.Size(61, 13);
+            this.LbGrupp.Size = new System.Drawing.Size(138, 25);
             this.LbGrupp.TabIndex = 13;
             this.LbGrupp.Text = "                  ";
             // 
@@ -395,7 +398,6 @@
             this.Controls.Add(this.LboxMedlem);
             this.Name = "CirkusNärvaror";
             this.Text = "Närvarokort";
-            this.Load += new System.EventHandler(this.CirkusNärvaror_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -410,22 +412,22 @@
         #endregion
 
         private System.Windows.Forms.ListBox LboxMedlem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button BtSökdatum;
+        private System.Windows.Forms.TextBox TxtboxTill;
+        private System.Windows.Forms.ComboBox Cboxledare;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBoxFrån;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtSökledare;
+        private System.Windows.Forms.Button BtGruppLäggtill;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label LbLäggtillgrupp;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button BtGruppsök;
+        private System.Windows.Forms.ComboBox CboxTräningsgrupp;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
