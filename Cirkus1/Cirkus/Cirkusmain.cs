@@ -45,19 +45,6 @@ namespace Cirkus
         }
 
 
-
-
-        private void MedlNrLb_Click(object sender, EventArgs e)
-        {
-            //sorterar medlemslistan i nummerordning
-            Medlem.Sort(delegate (medlem x, medlem y)
-            {
-                return x.Medlemnr.CompareTo(y.Medlemnr);
-
-            });
-            }
-           
-
         private void träningsgruppBT_Click(object sender, EventArgs e)
         {
             Cirkusträningsgrupp läggtill = new Cirkusträningsgrupp(); // form för lägga till medlem
@@ -65,17 +52,7 @@ namespace Cirkus
             läggtill.ShowDialog(); // Öppnar form Lägg till medlem
         }
 
-        private void förnamnLb_Click(object sender, EventArgs e)
-        {
-            //sorterar medlemslistan i bokstavsordning
-            Medlem.Sort(delegate (medlem x, medlem y)
-            {
-                return x.Förnamn.CompareTo(y.Förnamn);
-
-            });
-           
-        }
-
+ 
         private void narvaroBt_Click(object sender, EventArgs e)
         {
             CirkusNärvaror laggtill = new CirkusNärvaror();
