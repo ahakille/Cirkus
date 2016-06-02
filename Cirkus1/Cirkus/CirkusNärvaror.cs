@@ -145,7 +145,8 @@ namespace Cirkus
 
         private void BtSökdatum_Click(object sender, EventArgs e)
         {
-            int tid1, tid2;
+            int tid1 = 0;
+            int tid2 = 0;
             postgres db = new postgres();
             datum1= db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.aktivtetsid = p.id");
             try
@@ -159,7 +160,10 @@ namespace Cirkus
             }
             foreach (Träningstillfälle t in datum1)
             {
-                
+                if(tid1 <= t.Datum && tid2 >= t.Datum)
+                {
+                    datum2.Add(t);
+                }
             }
             
         }
