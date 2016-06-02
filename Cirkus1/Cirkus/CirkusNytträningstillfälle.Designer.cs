@@ -32,7 +32,6 @@
             this.NyttträningstillfälleBt = new System.Windows.Forms.Button();
             this.CboxPlats = new System.Windows.Forms.ComboBox();
             this.date = new System.Windows.Forms.DateTimePicker();
-            this.CboxTräningstyp = new System.Windows.Forms.ComboBox();
             this.CboxTräningsgrupper = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,13 +49,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.TxtTypav = new System.Windows.Forms.TextBox();
+            this.BtFinish = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AvbrytBt
             // 
-            this.AvbrytBt.Location = new System.Drawing.Point(452, 78);
+            this.AvbrytBt.Location = new System.Drawing.Point(474, 364);
             this.AvbrytBt.Name = "AvbrytBt";
-            this.AvbrytBt.Size = new System.Drawing.Size(75, 23);
+            this.AvbrytBt.Size = new System.Drawing.Size(75, 34);
             this.AvbrytBt.TabIndex = 0;
             this.AvbrytBt.Text = "Avbryt";
             this.AvbrytBt.UseVisualStyleBackColor = true;
@@ -83,7 +84,6 @@
             this.CboxPlats.Name = "CboxPlats";
             this.CboxPlats.Size = new System.Drawing.Size(145, 21);
             this.CboxPlats.TabIndex = 2;
-            this.CboxPlats.SelectedIndexChanged += new System.EventHandler(this.CboxPlats_SelectedIndexChanged);
             // 
             // date
             // 
@@ -91,14 +91,6 @@
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(152, 20);
             this.date.TabIndex = 3;
-            // 
-            // CboxTräningstyp
-            // 
-            this.CboxTräningstyp.FormattingEnabled = true;
-            this.CboxTräningstyp.Location = new System.Drawing.Point(202, 78);
-            this.CboxTräningstyp.Name = "CboxTräningstyp";
-            this.CboxTräningstyp.Size = new System.Drawing.Size(121, 21);
-            this.CboxTräningstyp.TabIndex = 4;
             // 
             // CboxTräningsgrupper
             // 
@@ -175,7 +167,7 @@
             // läggtillmedlemBt
             // 
             this.läggtillmedlemBt.Enabled = false;
-            this.läggtillmedlemBt.Location = new System.Drawing.Point(303, 216);
+            this.läggtillmedlemBt.Location = new System.Drawing.Point(256, 212);
             this.läggtillmedlemBt.Name = "läggtillmedlemBt";
             this.läggtillmedlemBt.Size = new System.Drawing.Size(75, 23);
             this.läggtillmedlemBt.TabIndex = 33;
@@ -188,14 +180,14 @@
             this.MedlmLbox.FormattingEnabled = true;
             this.MedlmLbox.Location = new System.Drawing.Point(34, 153);
             this.MedlmLbox.Name = "MedlmLbox";
-            this.MedlmLbox.Size = new System.Drawing.Size(253, 186);
+            this.MedlmLbox.Size = new System.Drawing.Size(203, 186);
             this.MedlmLbox.TabIndex = 32;
             this.MedlmLbox.SelectedIndexChanged += new System.EventHandler(this.MedlmLbox_SelectedIndexChanged);
             // 
             // LboxDeltagit
             // 
             this.LboxDeltagit.FormattingEnabled = true;
-            this.LboxDeltagit.Location = new System.Drawing.Point(384, 151);
+            this.LboxDeltagit.Location = new System.Drawing.Point(337, 151);
             this.LboxDeltagit.Name = "LboxDeltagit";
             this.LboxDeltagit.Size = new System.Drawing.Size(202, 186);
             this.LboxDeltagit.TabIndex = 32;
@@ -203,7 +195,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(385, 135);
+            this.label5.Location = new System.Drawing.Point(334, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 35;
@@ -212,7 +204,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(449, 135);
+            this.label6.Location = new System.Drawing.Point(398, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 36;
@@ -221,7 +213,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(504, 135);
+            this.label7.Location = new System.Drawing.Point(453, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 37;
@@ -230,7 +222,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 122);
+            this.label8.Location = new System.Drawing.Point(334, 123);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 38;
@@ -252,11 +244,30 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "Tid";
             // 
+            // TxtTypav
+            // 
+            this.TxtTypav.Location = new System.Drawing.Point(205, 79);
+            this.TxtTypav.Name = "TxtTypav";
+            this.TxtTypav.Size = new System.Drawing.Size(100, 20);
+            this.TxtTypav.TabIndex = 41;
+            // 
+            // BtFinish
+            // 
+            this.BtFinish.Location = new System.Drawing.Point(375, 364);
+            this.BtFinish.Name = "BtFinish";
+            this.BtFinish.Size = new System.Drawing.Size(93, 34);
+            this.BtFinish.TabIndex = 42;
+            this.BtFinish.Text = "Klart";
+            this.BtFinish.UseVisualStyleBackColor = true;
+            this.BtFinish.Click += new System.EventHandler(this.BtFinish_Click);
+            // 
             // CirkusNytträningstillfälle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 410);
+            this.ClientSize = new System.Drawing.Size(561, 410);
+            this.Controls.Add(this.BtFinish);
+            this.Controls.Add(this.TxtTypav);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.TxtBox);
             this.Controls.Add(this.label8);
@@ -274,7 +285,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboxTräningsgrupper);
-            this.Controls.Add(this.CboxTräningstyp);
             this.Controls.Add(this.date);
             this.Controls.Add(this.CboxPlats);
             this.Controls.Add(this.NyttträningstillfälleBt);
@@ -292,7 +302,6 @@
         private System.Windows.Forms.Button NyttträningstillfälleBt;
         private System.Windows.Forms.ComboBox CboxPlats;
         private System.Windows.Forms.DateTimePicker date;
-        private System.Windows.Forms.ComboBox CboxTräningstyp;
         private System.Windows.Forms.ComboBox CboxTräningsgrupper;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -310,5 +319,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TxtTypav;
+        private System.Windows.Forms.Button BtFinish;
     }
 }

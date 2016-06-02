@@ -14,6 +14,7 @@ namespace Cirkus
     {
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
         List<medlem> medlem = new List<medlem>();
+        List<medlem> tillagda = new List<medlem>();
         medlem aktuellmedlem = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
         private string Plats, tid;
@@ -49,10 +50,9 @@ namespace Cirkus
             läggtillmedlemBt.Enabled = true;
             NyttträningstillfälleBt.Enabled = false;
             Träningstillfälle pt = new Träningstillfälle();
-            pt.LaggTillTräningstillfälle(CboxPlats.Text , "2016-06-22" ,TxtBox.Text , CboxTräningstyp.Text );
-            postgres db = new postgres();
-            db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");           
-            
+            pt.LaggTillTräningstillfälle(CboxPlats.Text, "2016-06-22", TxtBox.Text, TxtBox.Text);
+                      
+
         }
 
         private void AvbrytBt_Click(object sender, EventArgs e)
@@ -62,21 +62,38 @@ namespace Cirkus
 
         private void läggtillmedlemBt_Click(object sender, EventArgs e)
         {
-            postgres db = new postgres();
-            db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");
+            int t =tillagda.Count;
+            bool f=false;
+            for (int n=0; n<t;n++)
+            {
+                if (aktuellmedlem == tillagda[n])
+                {
+                    f = true;
+                }
+            }
+            if (f == false)
+            {
+                tillagda.Add(aktuellmedlem);
+                LboxDeltagit.DataSource = null;
+                LboxDeltagit.DataSource = tillagda;
+                postgres db = new postgres();
+                db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");
+            }
+            
         }
 
         private void MedlmLbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            aktuellmedlem = (medlem)CboxTräningsgrupper.SelectedItem;
+            aktuellmedlem = (medlem)MedlmLbox.SelectedItem;
             if (aktuellmedlem != null)
             {
-            }
-            }
 
-        private void CboxPlats_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+            }
         }
-    }
+
+        private void BtFinish_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
 }
