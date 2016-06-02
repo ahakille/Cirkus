@@ -60,6 +60,20 @@ namespace Cirkus
             Close();
         }
 
+        private void läggtillmedlemBt_Click(object sender, EventArgs e)
+        {
+            postgres db = new postgres();
+            db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");
+        }
+
+        private void MedlmLbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuellmedlem = (medlem)CboxTräningsgrupper.SelectedItem;
+            if (aktuellmedlem != null)
+            {
+            }
+            }
+
         private void CboxPlats_SelectedIndexChanged(object sender, EventArgs e)
         {
             

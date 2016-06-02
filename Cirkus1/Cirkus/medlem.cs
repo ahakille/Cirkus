@@ -106,7 +106,7 @@ namespace Cirkus
             postgres m = new postgres();
             m.SqlAdmin("update medlem set förnamn = '" + Förnamn + "' where mednr = " + Medlemnr + ";");
         }
-        public void Nyttförnamn()
+        public void Nyttefternamnn()
         {
 
             postgres m = new postgres();

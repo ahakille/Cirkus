@@ -181,6 +181,7 @@
             this.läggtillmedlemBt.TabIndex = 33;
             this.läggtillmedlemBt.Text = ">>>>";
             this.läggtillmedlemBt.UseVisualStyleBackColor = true;
+            this.läggtillmedlemBt.Click += new System.EventHandler(this.läggtillmedlemBt_Click);
             // 
             // MedlmLbox
             // 
@@ -189,6 +190,7 @@
             this.MedlmLbox.Name = "MedlmLbox";
             this.MedlmLbox.Size = new System.Drawing.Size(253, 186);
             this.MedlmLbox.TabIndex = 32;
+            this.MedlmLbox.SelectedIndexChanged += new System.EventHandler(this.MedlmLbox_SelectedIndexChanged);
             // 
             // LboxDeltagit
             // 
