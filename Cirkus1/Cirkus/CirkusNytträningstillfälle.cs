@@ -51,14 +51,18 @@ namespace Cirkus
             {
                 MessageBox.Show("Du måste fylla i datum och tid korrekt", "Felmeddelande", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (TxtTypav.Text == "" || CboxPlats.Text == "")
+            else if (TxtTypav.Text == "" || CboxPlats.Text == "")
             {
                 MessageBox.Show("Du måste fylla i träningsplats och träningstyp ", "Felmeddelande", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            läggtillmedlemBt.Enabled = true;
-            NyttträningstillfälleBt.Enabled = false;
-            Träningstillfälle pt = new Träningstillfälle();
-            pt.LaggTillTräningstillfälle(CboxPlats.Text, TxtBdatum.Text, TxtBox.Text, TxtTypav.Text);
+            else
+            {
+                läggtillmedlemBt.Enabled = true;
+                NyttträningstillfälleBt.Enabled = false;
+                Träningstillfälle pt = new Träningstillfälle();
+                pt.LaggTillTräningstillfälle(CboxPlats.Text, TxtBdatum.Text, TxtBox.Text, TxtTypav.Text);
+            }
+           
                       
 
         }
