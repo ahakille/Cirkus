@@ -124,5 +124,12 @@ namespace Cirkus
             _fleraträningsgrupper = true;
             BtGruppLäggtill.Enabled = false;
         }
+
+        private void BtSökdatum_Click(object sender, EventArgs e)
+        {
+            string tid1, tid2;
+            tid1 = TxtBoxFrån.Text;
+            tid2 = TxtboxTill.Text;
+        }
     }
 }

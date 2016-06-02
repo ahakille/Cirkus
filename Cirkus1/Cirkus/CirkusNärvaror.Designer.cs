@@ -84,6 +84,7 @@
             this.BtSökdatum.TabIndex = 2;
             this.BtSökdatum.Text = "Sök";
             this.BtSökdatum.UseVisualStyleBackColor = true;
+            this.BtSökdatum.Click += new System.EventHandler(this.BtSökdatum_Click);
             // 
             // TxtboxTill
             // 
