@@ -17,15 +17,18 @@ namespace Cirkus
         public Cirkusupdatemedlem()
         {
             InitializeComponent();
-
-            //Hämtar medlemslistan
-            postgres db = new postgres();
-            Medlem = db.hämtamedlem("select * from medlem");
-            medlemLbox.DataSource = Medlem;
+            hämtalistan();
 
 
         }
-        
+        private void hämtalistan()
+        {
+            //Hämtar medlemslistan
+            postgres db = new postgres();
+            Medlem = db.hämtamedlem("select * from medlem");
+            medlemLbox.DataSource = null;
+            medlemLbox.DataSource = Medlem;
+        }
         private void abortBt_Click(object sender, EventArgs e)
         {
             Close();
@@ -33,7 +36,7 @@ namespace Cirkus
 
         private void updateBt_Click(object sender, EventArgs e)
         {
-            aktuellmedlem.Förnamn = fnamnTxt.Text;
+            
             aktuellmedlem.Efternamn = enamnTxt.Text;
             födelsedataTxt.Text = Convert.ToString(aktuellmedlem.Födelsedata);
             aktuellmedlem.Telefon = telefonTxt.Text;
@@ -44,9 +47,17 @@ namespace Cirkus
             aktuellmedlem.Email = emailTxt.Text;
             aktuellmedlem.Kön = könCbox.Text;
             aktuellmedlem.Medlemstyp = MedlemstypCbox.Text;
+
             aktuellmedlem.Foto= fotoCbox.Checked;
+            if (aktuellmedlem.Förnamn != fnamnTxt.Text)
+            {
+                aktuellmedlem.Förnamn = fnamnTxt.Text;
+                
+                aktuellmedlem.Nyttförnamn();
+                
+            }
 
-
+            hämtalistan();
         }
 
         private void laggmedlemBt_Click(object sender, EventArgs e)

@@ -100,7 +100,18 @@ namespace Cirkus
             postgres m = new postgres();
             m.SqlAdmin("update medlem set foto = " + foto + " where mednr = " + Medlemnr + ";");
         }
+        public void Nyttförnamn()
+        {
+            
+            postgres m = new postgres();
+            m.SqlAdmin("update medlem set förnamn = '" + Förnamn + "' where mednr = " + Medlemnr + ";");
+        }
+        public void Nyttförnamn()
+        {
 
+            postgres m = new postgres();
+            m.SqlAdmin("update medlem set förnamn = '" + Förnamn + "' where mednr = " + Medlemnr + ";");
+        }
         public override string ToString()
         {
             return "  " + Medlemnr + ", " + " " + Förnamn + " " + Efternamn;
