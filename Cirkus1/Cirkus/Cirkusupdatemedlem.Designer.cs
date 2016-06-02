@@ -59,7 +59,7 @@
             this.MedlNrLb = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.medlemLbox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Bttabort = new System.Windows.Forms.Button();
             this.laggmedlemBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -334,15 +334,15 @@
             this.medlemLbox.TabIndex = 52;
             this.medlemLbox.SelectedIndexChanged += new System.EventHandler(this.medlemLbox_SelectedIndexChanged);
             // 
-            // button1
+            // Bttabort
             // 
-            this.button1.Location = new System.Drawing.Point(183, 492);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 28);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Ta bort medlem";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.updateBt_Click);
+            this.Bttabort.Location = new System.Drawing.Point(183, 492);
+            this.Bttabort.Name = "Bttabort";
+            this.Bttabort.Size = new System.Drawing.Size(151, 28);
+            this.Bttabort.TabIndex = 26;
+            this.Bttabort.Text = "Ta bort medlem";
+            this.Bttabort.UseVisualStyleBackColor = true;
+            this.Bttabort.Click += new System.EventHandler(this.Bttabort_Click);
             // 
             // laggmedlemBt
             // 
@@ -390,7 +390,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Bttabort);
             this.Controls.Add(this.updateBt);
             this.Name = "Cirkusupdatemedlem";
             this.Text = "Cirkusupdatemedlem";
@@ -432,7 +432,7 @@
         private System.Windows.Forms.Label MedlNrLb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ListBox medlemLbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Bttabort;
         private System.Windows.Forms.Button laggmedlemBt;
     }
 }

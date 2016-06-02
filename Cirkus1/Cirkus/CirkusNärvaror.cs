@@ -16,5 +16,15 @@ namespace Cirkus
         {
             InitializeComponent();
         }
+
+        private void CirkusNärvaror_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="Nyträningsgrupp.Designer.cs">
       <DependentUpon>Nyträningsgrupp.cs</DependentUpon>
     </Compile>
+    <Compile Include="närvaro.cs" />
     <Compile Include="Träningsgrupp.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Cirkusmedlem.cs">
