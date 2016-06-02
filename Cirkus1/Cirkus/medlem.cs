@@ -128,7 +128,7 @@ namespace Cirkus
 
         public override string ToString()
         {
-            return "  " + Medlemnr + ", " + " " + Förnamn + " " + Efternamn + " " + Födelsedata;
+            return "  " + Medlemnr + ", " + " " + Förnamn + " " + Efternamn;
         }
 
         

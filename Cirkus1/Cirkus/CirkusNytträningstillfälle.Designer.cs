@@ -53,17 +53,19 @@
             this.TxtBdatum = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Cboxtränare = new System.Windows.Forms.ComboBox();
-            this.LboxTränare = new System.Windows.Forms.ListBox();
-            this.BtNytrännare = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.BtNytrännare = new System.Windows.Forms.Button();
+            this.LboxTränare = new System.Windows.Forms.ListBox();
+            this.Cboxtränare = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // AvbrytBt
             // 
-            this.AvbrytBt.Location = new System.Drawing.Point(460, 489);
+            this.AvbrytBt.Location = new System.Drawing.Point(279, 493);
             this.AvbrytBt.Name = "AvbrytBt";
             this.AvbrytBt.Size = new System.Drawing.Size(75, 34);
             this.AvbrytBt.TabIndex = 0;
@@ -141,7 +143,7 @@
             // EfterNamnLb
             // 
             this.EfterNamnLb.AutoSize = true;
-            this.EfterNamnLb.Location = new System.Drawing.Point(142, 284);
+            this.EfterNamnLb.Location = new System.Drawing.Point(126, 27);
             this.EfterNamnLb.Name = "EfterNamnLb";
             this.EfterNamnLb.Size = new System.Drawing.Size(55, 13);
             this.EfterNamnLb.TabIndex = 37;
@@ -150,7 +152,7 @@
             // förnamnLb
             // 
             this.förnamnLb.AutoSize = true;
-            this.förnamnLb.Location = new System.Drawing.Point(87, 284);
+            this.förnamnLb.Location = new System.Drawing.Point(71, 27);
             this.förnamnLb.Name = "förnamnLb";
             this.förnamnLb.Size = new System.Drawing.Size(48, 13);
             this.förnamnLb.TabIndex = 36;
@@ -159,7 +161,7 @@
             // MedlNrLb
             // 
             this.MedlNrLb.AutoSize = true;
-            this.MedlNrLb.Location = new System.Drawing.Point(23, 284);
+            this.MedlNrLb.Location = new System.Drawing.Point(7, 27);
             this.MedlNrLb.Name = "MedlNrLb";
             this.MedlNrLb.Size = new System.Drawing.Size(58, 13);
             this.MedlNrLb.TabIndex = 35;
@@ -168,9 +170,9 @@
             // läggtillmedlemBt
             // 
             this.läggtillmedlemBt.Enabled = false;
-            this.läggtillmedlemBt.Location = new System.Drawing.Point(244, 359);
+            this.läggtillmedlemBt.Location = new System.Drawing.Point(215, 96);
             this.läggtillmedlemBt.Name = "läggtillmedlemBt";
-            this.läggtillmedlemBt.Size = new System.Drawing.Size(75, 23);
+            this.läggtillmedlemBt.Size = new System.Drawing.Size(43, 47);
             this.läggtillmedlemBt.TabIndex = 33;
             this.läggtillmedlemBt.Text = ">>>>";
             this.läggtillmedlemBt.UseVisualStyleBackColor = true;
@@ -179,7 +181,7 @@
             // MedlmLbox
             // 
             this.MedlmLbox.FormattingEnabled = true;
-            this.MedlmLbox.Location = new System.Drawing.Point(22, 300);
+            this.MedlmLbox.Location = new System.Drawing.Point(6, 43);
             this.MedlmLbox.Name = "MedlmLbox";
             this.MedlmLbox.Size = new System.Drawing.Size(203, 186);
             this.MedlmLbox.TabIndex = 32;
@@ -188,15 +190,15 @@
             // LboxDeltagit
             // 
             this.LboxDeltagit.FormattingEnabled = true;
-            this.LboxDeltagit.Location = new System.Drawing.Point(325, 298);
+            this.LboxDeltagit.Location = new System.Drawing.Point(264, 43);
             this.LboxDeltagit.Name = "LboxDeltagit";
-            this.LboxDeltagit.Size = new System.Drawing.Size(202, 186);
+            this.LboxDeltagit.Size = new System.Drawing.Size(196, 186);
             this.LboxDeltagit.TabIndex = 32;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(322, 283);
+            this.label5.Location = new System.Drawing.Point(261, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 35;
@@ -205,7 +207,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(386, 283);
+            this.label6.Location = new System.Drawing.Point(325, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 36;
@@ -214,7 +216,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(441, 283);
+            this.label7.Location = new System.Drawing.Point(380, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 37;
@@ -223,7 +225,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(322, 270);
+            this.label8.Location = new System.Drawing.Point(261, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 38;
@@ -255,7 +257,7 @@
             // 
             // BtFinish
             // 
-            this.BtFinish.Location = new System.Drawing.Point(361, 489);
+            this.BtFinish.Location = new System.Drawing.Point(154, 493);
             this.BtFinish.Name = "BtFinish";
             this.BtFinish.Size = new System.Drawing.Size(93, 34);
             this.BtFinish.TabIndex = 42;
@@ -285,7 +287,7 @@
             this.groupBox1.Size = new System.Drawing.Size(466, 115);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fyll först i";
+            this.groupBox1.Text = "1 Fyll först i";
             // 
             // groupBox2
             // 
@@ -298,24 +300,16 @@
             this.groupBox2.Size = new System.Drawing.Size(466, 86);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lägg till tränare";
+            this.groupBox2.Text = "2 Lägg till tränare";
             // 
-            // Cboxtränare
+            // label10
             // 
-            this.Cboxtränare.FormattingEnabled = true;
-            this.Cboxtränare.Location = new System.Drawing.Point(304, 30);
-            this.Cboxtränare.Name = "Cboxtränare";
-            this.Cboxtränare.Size = new System.Drawing.Size(141, 21);
-            this.Cboxtränare.TabIndex = 0;
-            this.Cboxtränare.SelectedIndexChanged += new System.EventHandler(this.Cboxtränare_SelectedIndexChanged);
-            // 
-            // LboxTränare
-            // 
-            this.LboxTränare.FormattingEnabled = true;
-            this.LboxTränare.Location = new System.Drawing.Point(6, 19);
-            this.LboxTränare.Name = "LboxTränare";
-            this.LboxTränare.Size = new System.Drawing.Size(274, 43);
-            this.LboxTränare.TabIndex = 1;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(304, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Tillgängliga tränare";
             // 
             // BtNytrännare
             // 
@@ -327,43 +321,63 @@
             this.BtNytrännare.UseVisualStyleBackColor = true;
             this.BtNytrännare.Click += new System.EventHandler(this.BtNytrännare_Click);
             // 
-            // label10
+            // LboxTränare
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(304, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Tillgängliga tränare";
+            this.LboxTränare.FormattingEnabled = true;
+            this.LboxTränare.Location = new System.Drawing.Point(6, 19);
+            this.LboxTränare.Name = "LboxTränare";
+            this.LboxTränare.Size = new System.Drawing.Size(274, 43);
+            this.LboxTränare.TabIndex = 1;
+            // 
+            // Cboxtränare
+            // 
+            this.Cboxtränare.FormattingEnabled = true;
+            this.Cboxtränare.Location = new System.Drawing.Point(304, 30);
+            this.Cboxtränare.Name = "Cboxtränare";
+            this.Cboxtränare.Size = new System.Drawing.Size(141, 21);
+            this.Cboxtränare.TabIndex = 0;
+            this.Cboxtränare.SelectedIndexChanged += new System.EventHandler(this.Cboxtränare_SelectedIndexChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.MedlmLbox);
+            this.groupBox3.Controls.Add(this.MedlNrLb);
+            this.groupBox3.Controls.Add(this.förnamnLb);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.EfterNamnLb);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.läggtillmedlemBt);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.LboxDeltagit);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(35, 227);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(466, 260);
+            this.groupBox3.TabIndex = 46;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "3 Lägg till medlemar";
             // 
             // CirkusNytträningstillfälle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 613);
+            this.ClientSize = new System.Drawing.Size(525, 540);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TxtBdatum);
             this.Controls.Add(this.BtFinish);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.EfterNamnLb);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.förnamnLb);
-            this.Controls.Add(this.MedlNrLb);
-            this.Controls.Add(this.läggtillmedlemBt);
-            this.Controls.Add(this.LboxDeltagit);
-            this.Controls.Add(this.MedlmLbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboxPlats);
             this.Controls.Add(this.AvbrytBt);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.Name = "CirkusNytträningstillfälle";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +414,6 @@
         private System.Windows.Forms.Button BtNytrännare;
         private System.Windows.Forms.ListBox LboxTränare;
         private System.Windows.Forms.ComboBox Cboxtränare;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

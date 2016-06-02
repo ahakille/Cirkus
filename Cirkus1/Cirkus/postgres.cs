@@ -99,6 +99,48 @@ namespace Cirkus
             return medlem;
 
         }
+        public List<närvaro> hämtanärvaro(string psql)
+        {
+            sqlFraga(psql);
+            List<närvaro> närvaro = new List<närvaro>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr;
+                string f;
+                int i;
+
+                närvaro medl = new närvaro();
+                nr = dr["mednr"].ToString();
+                f = dr["födelsedata"].ToString();
+                medl.Förnamn = dr["förnamn"].ToString();
+                medl.Efternamn = dr["efternamn"].ToString();
+                medl.Gata = dr["gata"].ToString();
+                medl.Postnr = dr["postnr"].ToString();
+                medl.Ort = dr["ort"].ToString();
+                medl.Email = dr["email"].ToString();
+                medl.Telefon = dr["telefon"].ToString();
+                medl.Mobilnr = dr["mobilnr"].ToString();
+                medl.Kön = dr["kön"].ToString();
+                medl.Medlemstyp = dr["medtyp"].ToString();
+                string t = dr["foto"].ToString();
+                if (t == "")
+                {
+                    t = "false";
+                }
+                medl.Foto = Convert.ToBoolean(t);
+                if (Int32.TryParse(f, out i))
+                {
+                    medl.Födelsedata = i;
+                }
+                else
+                {
+                    medl.Födelsedata = 00000000;
+                }
+                medl.Medlemnr = Convert.ToUInt16(nr);
+                närvaro.Add(medl);
+            }
+            return närvaro;
+        }
         public List<Träningsgrupp> hämtaträningsgrupp (string psql)
         {
             sqlFraga(psql);

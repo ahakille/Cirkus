@@ -13,11 +13,11 @@ namespace Cirkus
     public partial class CirkusNärvaror : Form
     {
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
-        List<medlem> medlem = new List<medlem>();
+        List<närvaro> medlem = new List<närvaro>();
         List<medlem> tränare = new List<medlem>();
         List<medlem> tränare2 = new List<medlem>();
         List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
-        medlem aktuellmedlem = new medlem();
+        närvaro aktuellmedlem = new närvaro();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
         public CirkusNärvaror()
         {
@@ -37,7 +37,7 @@ namespace Cirkus
         {
             postgres db = new postgres();
             postgres db2 = new postgres();
-            medlem = db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
             LboxMedlem.DataSource = medlem;
             tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
             LboxLedare.DataSource = tränare;
@@ -53,7 +53,7 @@ namespace Cirkus
 
         private void LboxMedlem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            aktuellmedlem = (medlem)LboxMedlem.SelectedItem;
+            aktuellmedlem = (närvaro)LboxMedlem.SelectedItem;
             if (aktuellmedlem !=null)
             {
                 postgres db = new postgres();
@@ -76,7 +76,7 @@ namespace Cirkus
 
         private void Cboxledare_SelectedIndexChanged(object sender, EventArgs e)
         {
-            aktuellmedlem = (medlem)Cboxledare.SelectedItem;
+            aktuellmedlem = (närvaro)Cboxledare.SelectedItem;
 
         }
     }
