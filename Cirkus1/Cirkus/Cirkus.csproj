@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ansvar.cs" />
     <Compile Include="CirkusNytträningstillfälle.cs">
       <SubType>Form</SubType>
     </Compile>
