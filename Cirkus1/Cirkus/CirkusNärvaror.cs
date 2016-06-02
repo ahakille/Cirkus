@@ -12,19 +12,49 @@ namespace Cirkus
 {
     public partial class CirkusNärvaror : Form
     {
+        List<Träningsgrupp> grupp = new List<Träningsgrupp>();
+        List<medlem> medlem = new List<medlem>();
+        List<medlem> tränare = new List<medlem>();
+        List<Träningstillfälle> tilfälle = new List<Träningstillfälle>();
+        medlem aktuellmedlem = new medlem();
+        Träningsgrupp aktuellgrupp = new Träningsgrupp();
         public CirkusNärvaror()
         {
             InitializeComponent();
+            fillcombo();
+        }
+        void fillcombo()
+        {
+            postgres db = new postgres();
+            grupp = db.hämtaträningsgrupp("select * from träningsgrupp");
+            CboxTräningsgrupp.DataSource = grupp;
         }
 
-        private void CirkusNärvaror_Load(object sender, EventArgs e)
+        private void BtGruppsök_Click(object sender, EventArgs e)
         {
-
+            postgres db = new postgres();
+            postgres db2 = new postgres();
+            medlem = db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            LboxMedlem.DataSource = medlem;
+            tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            LboxLedare.DataSource = tränare;
+            LbGrupp.Text = aktuellgrupp.Gruppnamn;
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
         {
+            aktuellgrupp = (Träningsgrupp)CboxTräningsgrupp.SelectedItem;
+         
+        }
 
+        private void LboxMedlem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aktuellmedlem = (medlem)LboxMedlem.SelectedItem;
+            if (aktuellmedlem !=null)
+            {
+                postgres db = new postgres();
+              //  tilfälle = db.hämtaTräningslista("select id,plats,datum,tid from träningstillfälle where id in( select medlem from deltar where medlem ='"+aktuellmedlem.Medlemnr+"' and träningsgrupp ='"+aktuellgrupp.Gruppid+"')");
+            }
         }
     }
 }
