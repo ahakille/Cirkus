@@ -165,7 +165,16 @@ namespace Cirkus
                     datum2.Add(t);
                 }
             }
-            
+            LboxAktivitet.DataSource = null;
+            LboxAktivitet.DataSource = datum2;
+
+            int i = 0;
+            foreach (Träningstillfälle t in datum2)
+            {
+                i++;
+            }
+
+            lbl_aktiv.Text = "Antal träningstillfällen: " + i;
         }
     }
 }
