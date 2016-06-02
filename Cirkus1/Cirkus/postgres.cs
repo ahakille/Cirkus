@@ -163,15 +163,17 @@ namespace Cirkus
             List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
             foreach (DataRow dr in _tablell.Rows)
             {
-                string nr;
+                string nr, datum;
                 string a;
+                
                 Träningstillfälle t = new Träningstillfälle();
                 nr = dr["id"].ToString();
                 t.Plats = dr["plats"].ToString();
-                t.Datum = dr["datum"].ToString();
+                datum= dr["datum"].ToString();
                 t.Tid = dr["tid"].ToString();
                 t.Aktivitet = dr["aktivitet"].ToString();
                 a = dr["aktivtetsid"].ToString();
+                t.Datum = Convert.ToInt32(datum);
                 t.Id = Convert.ToUInt16(nr);
                 t.AktivitetID = Convert.ToUInt16(a);
                 tillfälle.Add(t);

@@ -9,7 +9,7 @@ namespace Cirkus
     public class Träningstillfälle
     {
         public string Plats { get; set; }
-        public string Datum { get; set; }
+        public int Datum { get; set; }
         public string Tid { get; set; }
         public string Aktivitet { get; set; }
         public int AktivitetID { get; set; }
@@ -18,7 +18,7 @@ namespace Cirkus
         public void LaggTillTräningstillfälle(string plats, string datum, string tid, string aktivitet)
         {
             Plats = plats;
-            Datum = datum;
+            Datum = Convert.ToInt32(datum);
             Tid = tid;
             Aktivitet = aktivitet;
 
