@@ -39,6 +39,7 @@ namespace Cirkus
           //  Träningstillfälle pt = new Träningstillfälle();
 //            pt.LaggTillTräningstillfälle("Cirkustältet", "2016-05-30", "18:30", "Cykling");
 
+            
             tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id; ");
             tillfälleBox.DataSource = tillfälle;
         }

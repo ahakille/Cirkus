@@ -137,6 +137,7 @@ namespace Cirkus
             }
             return tillfälle;
         }
+
         private void SqlNonQuery(string sql)
         {
             try
