@@ -15,6 +15,7 @@ namespace Cirkus
         List<Träningsgrupp> grupp = new List<Träningsgrupp>();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
         medlem aktuellmedlem = new medlem();
+        medlem aktuelltränare = new medlem();
         List<medlem> medlem = new List<medlem>();
         List<medlem> tränare = new List<medlem>();
         public Cirkusträningsgrupp()
@@ -29,9 +30,11 @@ namespace Cirkus
             grupp=db.hämtaträningsgrupp("select * from träningsgrupp");
             TräningsgruppCbox.DataSource = grupp;
             postgres db2 = new postgres();
+            postgres db3 = new postgres();
             medlem = db2.hämtamedlem("select * from medlem");
+            tränare = db3.hämtamedlem("select * from medlem");
             NymedlemCbox.DataSource = medlem;
-            NytränareCbox.DataSource = medlem;
+            NytränareCbox.DataSource = tränare;
         }
 
         private void TräningsgruppCbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,17 +85,14 @@ namespace Cirkus
         private void NytränareBt_Click(object sender, EventArgs e)
         {
             postgres db = new postgres();
-            db.SqlAdmin("insert into tränar(medlem,träningsgrupp) values('" + aktuellmedlem.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            db.SqlAdmin("insert into tränar(medlem,träningsgrupp) values('" + aktuelltränare.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
         }
 
         private void NytränareCbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            aktuellmedlem = (medlem)NytränareCbox.SelectedItem;
-            if (aktuellmedlem != null)
-            {
+            aktuelltränare = (medlem)NytränareCbox.SelectedItem;
 
-            }
 
         }
 

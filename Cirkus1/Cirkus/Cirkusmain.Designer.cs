@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.MedlNrLb = new System.Windows.Forms.Label();
-            this.förnamnLb = new System.Windows.Forms.Label();
-            this.EfterNamnLb = new System.Windows.Forms.Label();
             this.träningsgruppBT = new System.Windows.Forms.Button();
             this.narvaroBt = new System.Windows.Forms.Button();
             this.updateMedlemBt = new System.Windows.Forms.Button();
             this.tillfälleBox = new System.Windows.Forms.ListBox();
             this.NyttTräningstillfälleBt = new System.Windows.Forms.Button();
+            this.LbMedlem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -51,15 +48,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Medlem";
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(33, 207);
@@ -68,35 +56,6 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Uppdatera";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // MedlNrLb
-            // 
-            this.MedlNrLb.AutoSize = true;
-            this.MedlNrLb.Location = new System.Drawing.Point(278, 44);
-            this.MedlNrLb.Name = "MedlNrLb";
-            this.MedlNrLb.Size = new System.Drawing.Size(58, 13);
-            this.MedlNrLb.TabIndex = 5;
-            this.MedlNrLb.Text = "Medlemsnr";
-            this.MedlNrLb.Click += new System.EventHandler(this.MedlNrLb_Click);
-            // 
-            // förnamnLb
-            // 
-            this.förnamnLb.AutoSize = true;
-            this.förnamnLb.Location = new System.Drawing.Point(342, 44);
-            this.förnamnLb.Name = "förnamnLb";
-            this.förnamnLb.Size = new System.Drawing.Size(48, 13);
-            this.förnamnLb.TabIndex = 6;
-            this.förnamnLb.Text = "Förnman";
-            this.förnamnLb.Click += new System.EventHandler(this.förnamnLb_Click);
-            // 
-            // EfterNamnLb
-            // 
-            this.EfterNamnLb.AutoSize = true;
-            this.EfterNamnLb.Location = new System.Drawing.Point(397, 44);
-            this.EfterNamnLb.Name = "EfterNamnLb";
-            this.EfterNamnLb.Size = new System.Drawing.Size(55, 13);
-            this.EfterNamnLb.TabIndex = 7;
-            this.EfterNamnLb.Text = "Efternamn";
             // 
             // träningsgruppBT
             // 
@@ -146,21 +105,27 @@
             this.NyttTräningstillfälleBt.UseVisualStyleBackColor = true;
             this.NyttTräningstillfälleBt.Click += new System.EventHandler(this.NyttTräningstillfälleBt_Click);
             // 
+            // LbMedlem
+            // 
+            this.LbMedlem.AutoSize = true;
+            this.LbMedlem.Location = new System.Drawing.Point(45, 78);
+            this.LbMedlem.Name = "LbMedlem";
+            this.LbMedlem.Size = new System.Drawing.Size(35, 13);
+            this.LbMedlem.TabIndex = 14;
+            this.LbMedlem.Text = "label1";
+            // 
             // Cirkusmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 453);
+            this.Controls.Add(this.LbMedlem);
             this.Controls.Add(this.NyttTräningstillfälleBt);
             this.Controls.Add(this.tillfälleBox);
             this.Controls.Add(this.updateMedlemBt);
             this.Controls.Add(this.narvaroBt);
             this.Controls.Add(this.träningsgruppBT);
-            this.Controls.Add(this.EfterNamnLb);
-            this.Controls.Add(this.förnamnLb);
-            this.Controls.Add(this.MedlNrLb);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Cirkusmain";
             this.Text = "Cirkus - Kul & Bus  Admin";
@@ -173,16 +138,13 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label MedlNrLb;
-        private System.Windows.Forms.Label förnamnLb;
-        private System.Windows.Forms.Label EfterNamnLb;
         private System.Windows.Forms.Button träningsgruppBT;
         private System.Windows.Forms.Button narvaroBt;
         private System.Windows.Forms.Button updateMedlemBt;
         private System.Windows.Forms.ListBox tillfälleBox;
         private System.Windows.Forms.Button NyttTräningstillfälleBt;
+        private System.Windows.Forms.Label LbMedlem;
     }
 }
 
