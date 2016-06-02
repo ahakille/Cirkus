@@ -46,7 +46,9 @@ namespace Cirkus
 
         private void NyttträningstillfälleBt_Click(object sender, EventArgs e)
         {
-            if (TxtBdatum.Text == "ÅÅÅÅ-MM-DD" || TxtBox.Text == "HH-MM")
+            bool test = TxtBdatum.Text.All(char.IsNumber);
+            int leng = TxtBdatum.Text.Length;
+            if (test== false||leng !=8 || TxtBox.Text == "HH-MM")
             {
                 MessageBox.Show("Du måste fylla i datum och tid korrekt", "Felmeddelande", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
