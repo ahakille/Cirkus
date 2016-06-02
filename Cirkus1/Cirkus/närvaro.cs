@@ -20,7 +20,7 @@ namespace Cirkus
 
         public override string ToString()
         {
-            return " " + Förnamn + " " + Efternamn + ", " + Födelsedata;
+            return Medlemnr +", " + Förnamn + " " + Efternamn + ", " + Födelsedata;
         }
     }
 }

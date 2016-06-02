@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.medlemLbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.MedlNrLb = new System.Windows.Forms.Label();
@@ -52,18 +51,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // medlemLbox
-            // 
-            this.medlemLbox.FormattingEnabled = true;
-            this.medlemLbox.Location = new System.Drawing.Point(33, 54);
-            this.medlemLbox.Name = "medlemLbox";
-            this.medlemLbox.Size = new System.Drawing.Size(482, 147);
-            this.medlemLbox.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 21);
+            this.label1.Location = new System.Drawing.Point(275, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 2;
@@ -77,12 +68,11 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Uppdatera";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MedlNrLb
             // 
             this.MedlNrLb.AutoSize = true;
-            this.MedlNrLb.Location = new System.Drawing.Point(33, 38);
+            this.MedlNrLb.Location = new System.Drawing.Point(278, 44);
             this.MedlNrLb.Name = "MedlNrLb";
             this.MedlNrLb.Size = new System.Drawing.Size(58, 13);
             this.MedlNrLb.TabIndex = 5;
@@ -92,7 +82,7 @@
             // förnamnLb
             // 
             this.förnamnLb.AutoSize = true;
-            this.förnamnLb.Location = new System.Drawing.Point(97, 38);
+            this.förnamnLb.Location = new System.Drawing.Point(342, 44);
             this.förnamnLb.Name = "förnamnLb";
             this.förnamnLb.Size = new System.Drawing.Size(48, 13);
             this.förnamnLb.TabIndex = 6;
@@ -102,7 +92,7 @@
             // EfterNamnLb
             // 
             this.EfterNamnLb.AutoSize = true;
-            this.EfterNamnLb.Location = new System.Drawing.Point(152, 38);
+            this.EfterNamnLb.Location = new System.Drawing.Point(397, 44);
             this.EfterNamnLb.Name = "EfterNamnLb";
             this.EfterNamnLb.Size = new System.Drawing.Size(55, 13);
             this.EfterNamnLb.TabIndex = 7;
@@ -171,7 +161,6 @@
             this.Controls.Add(this.MedlNrLb);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.medlemLbox);
             this.Controls.Add(this.button1);
             this.Name = "Cirkusmain";
             this.Text = "Cirkus - Kul & Bus  Admin";
@@ -184,7 +173,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox medlemLbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label MedlNrLb;

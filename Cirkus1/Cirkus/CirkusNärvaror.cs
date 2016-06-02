@@ -18,7 +18,11 @@ namespace Cirkus
         List<medlem> tränare2 = new List<medlem>();
         List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         närvaro aktuellmedlem = new närvaro();
+        medlem aktuelltränare = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
+        private int _träningsgrupp;
+        private bool _fleraträningsgrupper = false;
+        private string _träningsgruppnamn;
         public CirkusNärvaror()
         {
             InitializeComponent();
@@ -30,19 +34,33 @@ namespace Cirkus
             grupp = db.hämtaträningsgrupp("select * from träningsgrupp");
             CboxTräningsgrupp.DataSource = grupp;
             postgres db2 = new postgres();
-            tränare2 = db2.hämtamedlem("");
+            tränare2 = db2.hämtamedlem("select * from medlem where mednr in(select medlem from leder)");
+            Cboxledare.DataSource = tränare2;
         }
 
         private void BtGruppsök_Click(object sender, EventArgs e)
         {
+            rensafält();
             postgres db = new postgres();
             postgres db2 = new postgres();
-            medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
-            LboxMedlem.DataSource = medlem;
-            tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
-            LboxLedare.DataSource = tränare;
+            if(_fleraträningsgrupper==true)
+            {
+                medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "'or träningsgrupp ='" + _träningsgrupp + "') ");
+                tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "'or träningsgrupp ='" + _träningsgrupp + "') ");
+            }
+            else
+            {
+                medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+                tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+
+            }
             Lbhuvud.Text = "Träningsgrupp";
-            LbGrupp.Text = aktuellgrupp.Gruppnamn;
+            LbGrupp.Text = aktuellgrupp.Gruppnamn +" och "+ _träningsgruppnamn;
+            LboxMedlem.DataSource = medlem;
+            LboxLedare.DataSource = tränare;
+            LbLäggtillgrupp.Text = "Grupper";
+            _fleraträningsgrupper = false;
+            BtGruppLäggtill.Enabled = true;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +75,18 @@ namespace Cirkus
             if (aktuellmedlem !=null)
             {
                 postgres db = new postgres();
-                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '"+aktuellmedlem.Medlemnr+"' and träningsgrupp='"+aktuellgrupp.Gruppid+"') and t.aktivtetsid = p.id ");
+                
+                if (_fleraträningsgrupper==true)
+                {
+                    
+                    tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "'or träningsgrupp = '" + _träningsgrupp + "') and t.aktivtetsid = p.id ");
+
+                }
+                else
+                {
+                    tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "') and t.aktivtetsid = p.id ");
+                }
+      
                 LboxAktivitet.DataSource = null;
                 LboxAktivitet.DataSource = tillfälle;
             }
@@ -70,14 +99,30 @@ namespace Cirkus
 
         private void BtSökledare_Click(object sender, EventArgs e)
         {
+            rensafält();
             Lbhuvud.Text = "Tränare";
-            LbGrupp.Text = aktuellmedlem.Förnamn +" "+ aktuellmedlem.Efternamn;
+            LbGrupp.Text = aktuelltränare.Förnamn +" "+ aktuelltränare.Efternamn;
         }
 
         private void Cboxledare_SelectedIndexChanged(object sender, EventArgs e)
         {
-            aktuellmedlem = (närvaro)Cboxledare.SelectedItem;
+          aktuelltränare = (medlem)Cboxledare.SelectedItem;
 
+        }
+        private void rensafält()
+        {
+            LboxAktivitet.DataSource = null;
+            LboxLedare.DataSource = null;
+            LboxMedlem.DataSource = null;
+        }
+
+        private void BtGruppLäggtill_Click(object sender, EventArgs e)
+        {
+            _träningsgrupp = aktuellgrupp.Gruppid;
+            _träningsgruppnamn = aktuellgrupp.Gruppnamn;
+            LbLäggtillgrupp.Text = _träningsgruppnamn;
+            _fleraträningsgrupper = true;
+            BtGruppLäggtill.Enabled = false;
         }
     }
 }

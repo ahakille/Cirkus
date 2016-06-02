@@ -41,10 +41,10 @@
             this.BtSökledare = new System.Windows.Forms.Button();
             this.BtGruppLäggtill = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.CboxTräningsgrupp = new System.Windows.Forms.ComboBox();
-            this.BtGruppsök = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.LbLäggtillgrupp = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtGruppsök = new System.Windows.Forms.Button();
+            this.CboxTräningsgrupp = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -179,6 +179,7 @@
             this.BtGruppLäggtill.TabIndex = 9;
             this.BtGruppLäggtill.Text = "Läggtill";
             this.BtGruppLäggtill.UseVisualStyleBackColor = true;
+            this.BtGruppLäggtill.Click += new System.EventHandler(this.BtGruppLäggtill_Click);
             // 
             // groupBox3
             // 
@@ -194,14 +195,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sök träningsgrupper";
             // 
-            // CboxTräningsgrupp
+            // LbLäggtillgrupp
             // 
-            this.CboxTräningsgrupp.FormattingEnabled = true;
-            this.CboxTräningsgrupp.Location = new System.Drawing.Point(7, 35);
-            this.CboxTräningsgrupp.Name = "CboxTräningsgrupp";
-            this.CboxTräningsgrupp.Size = new System.Drawing.Size(121, 21);
-            this.CboxTräningsgrupp.TabIndex = 0;
-            this.CboxTräningsgrupp.SelectedIndexChanged += new System.EventHandler(this.CboxTräningsgrupp_SelectedIndexChanged);
+            this.LbLäggtillgrupp.AutoSize = true;
+            this.LbLäggtillgrupp.Location = new System.Drawing.Point(10, 74);
+            this.LbLäggtillgrupp.Name = "LbLäggtillgrupp";
+            this.LbLäggtillgrupp.Size = new System.Drawing.Size(48, 13);
+            this.LbLäggtillgrupp.TabIndex = 12;
+            this.LbLäggtillgrupp.Text = "Grupper:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Träningsgrupper";
             // 
             // BtGruppsök
             // 
@@ -213,23 +223,14 @@
             this.BtGruppsök.UseVisualStyleBackColor = true;
             this.BtGruppsök.Click += new System.EventHandler(this.BtGruppsök_Click);
             // 
-            // label4
+            // CboxTräningsgrupp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Träningsgrupper";
-            // 
-            // LbLäggtillgrupp
-            // 
-            this.LbLäggtillgrupp.AutoSize = true;
-            this.LbLäggtillgrupp.Location = new System.Drawing.Point(10, 74);
-            this.LbLäggtillgrupp.Name = "LbLäggtillgrupp";
-            this.LbLäggtillgrupp.Size = new System.Drawing.Size(48, 13);
-            this.LbLäggtillgrupp.TabIndex = 12;
-            this.LbLäggtillgrupp.Text = "Grupper:";
+            this.CboxTräningsgrupp.FormattingEnabled = true;
+            this.CboxTräningsgrupp.Location = new System.Drawing.Point(7, 35);
+            this.CboxTräningsgrupp.Name = "CboxTräningsgrupp";
+            this.CboxTräningsgrupp.Size = new System.Drawing.Size(121, 21);
+            this.CboxTräningsgrupp.TabIndex = 0;
+            this.CboxTräningsgrupp.SelectedIndexChanged += new System.EventHandler(this.CboxTräningsgrupp_SelectedIndexChanged);
             // 
             // label6
             // 
