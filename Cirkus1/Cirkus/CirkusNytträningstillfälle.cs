@@ -25,12 +25,12 @@ namespace Cirkus
             InitializeComponent();
             fillcombo();
         }
-        void fillcombo ()
+        void fillcombo()
         {
             postgres db = new postgres();
             grupp = db.hämtaträningsgrupp("select * from träningsgrupp");
             CboxTräningsgrupper.DataSource = grupp;
-            
+
 
         }
 
@@ -62,8 +62,8 @@ namespace Cirkus
                 Träningstillfälle pt = new Träningstillfälle();
                 pt.LaggTillTräningstillfälle(CboxPlats.Text, TxtBdatum.Text, TxtBox.Text, TxtTypav.Text);
             }
-           
-                      
+
+
 
         }
 
@@ -74,9 +74,9 @@ namespace Cirkus
 
         private void läggtillmedlemBt_Click(object sender, EventArgs e)
         {
-            int t =tillagda.Count;
-            bool f=false;
-            for (int n=0; n<t;n++)
+            int t = tillagda.Count;
+            bool f = false;
+            for (int n = 0; n < t; n++)
             {
                 if (aktuellmedlem == tillagda[n])
                 {
@@ -91,7 +91,7 @@ namespace Cirkus
                 postgres db = new postgres();
                 db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");
             }
-            
+
         }
 
         private void MedlmLbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,5 +107,5 @@ namespace Cirkus
         {
             Close();
         }
-
+    }
 }

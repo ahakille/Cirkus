@@ -120,9 +120,9 @@
             // 
             // narvaroBt
             // 
-            this.narvaroBt.Location = new System.Drawing.Point(323, 418);
+            this.narvaroBt.Location = new System.Drawing.Point(562, 323);
             this.narvaroBt.Name = "narvaroBt";
-            this.narvaroBt.Size = new System.Drawing.Size(122, 23);
+            this.narvaroBt.Size = new System.Drawing.Size(145, 70);
             this.narvaroBt.TabIndex = 9;
             this.narvaroBt.Text = "Närvarokort";
             this.narvaroBt.UseVisualStyleBackColor = true;
