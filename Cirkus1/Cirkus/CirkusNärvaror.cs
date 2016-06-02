@@ -157,7 +157,10 @@ namespace Cirkus
             {
 
             }
-            
+            foreach (Träningstillfälle t in datum1)
+            {
+                
+            }
             
         }
     }
