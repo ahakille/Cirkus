@@ -19,5 +19,7 @@ namespace Cirkus
 
             a.SqlAdmin("insert into ansvarsområde (ansvar) values ('" + ansvarsområde + "');");
         }
+
+
     }
 }
