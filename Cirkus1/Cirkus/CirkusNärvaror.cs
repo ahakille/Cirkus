@@ -53,7 +53,7 @@ namespace Cirkus
             if (aktuellmedlem !=null)
             {
                 postgres db = new postgres();
-                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, deltar d, träningstyp a where t.aktivtetsid = a.id  and  d.medlem ='"+aktuellmedlem.Medlemnr+"' and d.träningsgrupp ='"+aktuellgrupp.Gruppid+"'");
+                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '"+aktuellmedlem.Medlemnr+"' and träningsgrupp='"+aktuellgrupp.Gruppid+"') and t.aktivtetsid = p.id ");
                 LboxAktivitet.DataSource = null;
                 LboxAktivitet.DataSource = tillfälle;
             }
