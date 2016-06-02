@@ -271,7 +271,7 @@
             this.TxtBdatum.Name = "TxtBdatum";
             this.TxtBdatum.Size = new System.Drawing.Size(100, 20);
             this.TxtBdatum.TabIndex = 43;
-            this.TxtBdatum.Text = "ÅÅÅÅ-MM-DD";
+            this.TxtBdatum.Text = "ÅÅÅÅMMDD";
             // 
             // groupBox1
             // 

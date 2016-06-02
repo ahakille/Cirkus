@@ -17,6 +17,8 @@ namespace Cirkus
         List<medlem> tränare = new List<medlem>();
         List<medlem> tränare2 = new List<medlem>();
         List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
+        List<Träningstillfälle> datum1 = new List<Träningstillfälle>();
+        List<Träningstillfälle> datum2 = new List<Träningstillfälle>();
         närvaro aktuellmedlem = new närvaro();
         medlem aktuelltränare = new medlem();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
@@ -143,9 +145,20 @@ namespace Cirkus
 
         private void BtSökdatum_Click(object sender, EventArgs e)
         {
-            string tid1, tid2;
-            tid1 = TxtBoxFrån.Text;
-            tid2 = TxtboxTill.Text;
+            int tid1, tid2;
+            postgres db = new postgres();
+            datum1= db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.aktivtetsid = p.id");
+            try
+            {
+                tid1 = Convert.ToInt32(TxtBoxFrån.Text);
+                tid2 = Convert.ToInt32(TxtboxTill.Text);
+            }
+            catch
+            {
+
+            }
+            
+            
         }
     }
 }
