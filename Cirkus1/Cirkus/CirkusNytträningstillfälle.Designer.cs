@@ -31,7 +31,6 @@
             this.AvbrytBt = new System.Windows.Forms.Button();
             this.NyttträningstillfälleBt = new System.Windows.Forms.Button();
             this.CboxPlats = new System.Windows.Forms.ComboBox();
-            this.date = new System.Windows.Forms.DateTimePicker();
             this.CboxTräningsgrupper = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TxtTypav = new System.Windows.Forms.TextBox();
             this.BtFinish = new System.Windows.Forms.Button();
+            this.TxtBdatum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // AvbrytBt
@@ -84,13 +84,6 @@
             this.CboxPlats.Name = "CboxPlats";
             this.CboxPlats.Size = new System.Drawing.Size(145, 21);
             this.CboxPlats.TabIndex = 2;
-            // 
-            // date
-            // 
-            this.date.Location = new System.Drawing.Point(202, 32);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(152, 20);
-            this.date.TabIndex = 3;
             // 
             // CboxTräningsgrupper
             // 
@@ -230,15 +223,16 @@
             // 
             // TxtBox
             // 
-            this.TxtBox.Location = new System.Drawing.Point(372, 35);
+            this.TxtBox.Location = new System.Drawing.Point(354, 36);
             this.TxtBox.Name = "TxtBox";
             this.TxtBox.Size = new System.Drawing.Size(100, 20);
             this.TxtBox.TabIndex = 39;
+            this.TxtBox.Text = "HH:MM";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(372, 16);
+            this.label9.Location = new System.Drawing.Point(354, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(22, 13);
             this.label9.TabIndex = 40;
@@ -261,11 +255,20 @@
             this.BtFinish.UseVisualStyleBackColor = true;
             this.BtFinish.Click += new System.EventHandler(this.BtFinish_Click);
             // 
+            // TxtBdatum
+            // 
+            this.TxtBdatum.Location = new System.Drawing.Point(205, 35);
+            this.TxtBdatum.Name = "TxtBdatum";
+            this.TxtBdatum.Size = new System.Drawing.Size(100, 20);
+            this.TxtBdatum.TabIndex = 43;
+            this.TxtBdatum.Text = "ÅÅÅÅ-MM-DD";
+            // 
             // CirkusNytträningstillfälle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 410);
+            this.Controls.Add(this.TxtBdatum);
             this.Controls.Add(this.BtFinish);
             this.Controls.Add(this.TxtTypav);
             this.Controls.Add(this.label9);
@@ -285,7 +288,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboxTräningsgrupper);
-            this.Controls.Add(this.date);
             this.Controls.Add(this.CboxPlats);
             this.Controls.Add(this.NyttträningstillfälleBt);
             this.Controls.Add(this.AvbrytBt);
@@ -301,7 +303,6 @@
         private System.Windows.Forms.Button AvbrytBt;
         private System.Windows.Forms.Button NyttträningstillfälleBt;
         private System.Windows.Forms.ComboBox CboxPlats;
-        private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.ComboBox CboxTräningsgrupper;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -321,5 +322,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtTypav;
         private System.Windows.Forms.Button BtFinish;
+        private System.Windows.Forms.TextBox TxtBdatum;
     }
 }

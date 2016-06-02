@@ -47,10 +47,18 @@ namespace Cirkus
 
         private void NyttträningstillfälleBt_Click(object sender, EventArgs e)
         {
+            if (TxtBdatum.Text == "ÅÅÅÅ-MM-DD" || TxtBox.Text == "HH-MM")
+            {
+                MessageBox.Show("Du måste fylla i datum och tid korrekt", "Felmeddelande", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (TxtTypav.Text == "" || CboxPlats.Text == "")
+            {
+                MessageBox.Show("Du måste fylla i träningsplats och träningstyp ", "Felmeddelande", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             läggtillmedlemBt.Enabled = true;
             NyttträningstillfälleBt.Enabled = false;
             Träningstillfälle pt = new Träningstillfälle();
-            pt.LaggTillTräningstillfälle(CboxPlats.Text, "2016-06-22", TxtBox.Text, TxtBox.Text);
+            pt.LaggTillTräningstillfälle(CboxPlats.Text, TxtBdatum.Text, TxtBox.Text, TxtTypav.Text);
                       
 
         }
