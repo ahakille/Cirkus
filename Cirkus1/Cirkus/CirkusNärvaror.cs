@@ -228,7 +228,7 @@ namespace Cirkus
             Lbtid.Text = "Efternamn";
             Lbplats.Text = "Födelsedata";
             LbGrupp.Text = TxtBoxFrån.Text + " till " + TxtboxTill.Text;
-            Lbhuvud.Text = "Träningsaktiviter";
+            Lbhuvud.Text = "Träningstillfällen";
 
 
 
