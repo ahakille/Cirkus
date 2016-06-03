@@ -42,17 +42,20 @@ namespace Cirkus
             aktuellgrupp = (Träningsgrupp)TräningsgruppCbox.SelectedItem;
                 if (aktuellgrupp != null)
             {
-                postgres db = new postgres();
-                postgres db2 = new postgres();
-                medlem= db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='"+aktuellgrupp.Gruppid+"') ");
-                MedlmLbox.DataSource = null;
-                MedlmLbox.DataSource = medlem;
-                tränare= db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
-                tränareLbox.DataSource = null;
-                tränareLbox.DataSource = tränare;
+                Hämtamedlemar();
             }
         }
-
+        private void Hämtamedlemar()
+        {
+            postgres db = new postgres();
+            postgres db2 = new postgres();
+            medlem = db.hämtamedlem("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            MedlmLbox.DataSource = null;
+            MedlmLbox.DataSource = medlem;
+            tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            tränareLbox.DataSource = null;
+            tränareLbox.DataSource = tränare;
+        }
         private void NyGruppBt_Click(object sender, EventArgs e)
         {
 
@@ -67,6 +70,7 @@ namespace Cirkus
             postgres db = new postgres();
             
             db.SqlAdmin("insert into ingåri(medlem,träningsgrupp) values('" + aktuellmedlem.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            Hämtamedlemar();
         }
 
         private void NymedlemCbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,6 +92,7 @@ namespace Cirkus
         {
             postgres db = new postgres();
             db.SqlAdmin("insert into tränar(medlem,träningsgrupp) values('" + aktuelltränare.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            Hämtamedlemar();
         }
 
         private void NytränareCbox_SelectedIndexChanged(object sender, EventArgs e)
