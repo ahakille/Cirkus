@@ -157,6 +157,22 @@ namespace Cirkus
             return tgrupp;
 
         }
+        public List<Antaldeltagare> hämtadeltagare (string psql)
+        {
+            sqlFraga(psql);
+            List<Antaldeltagare> tgrupp = new List<Antaldeltagare>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr,count;
+                Antaldeltagare grupp = new Antaldeltagare();
+                nr = dr["fräningstillfalle"].ToString();
+                count = dr["count"].ToString();
+                grupp.antal = Convert.ToInt32(count);
+                grupp.träningstillfalle = Convert.ToUInt16(nr);
+                tgrupp.Add(grupp);
+            }
+            return tgrupp;
+        }
         public List<Träningstillfälle> hämtaTräningslista (string psql)
         {
             sqlFraga(psql);
