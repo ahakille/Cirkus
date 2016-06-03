@@ -78,6 +78,7 @@ namespace Cirkus
             Lbdatum.Text = "Datum";
             Lbtid.Text = "Tid";
             Lbplats.Text = "Plats";
+            Lbhuvud.Text = "Träningsgrupp";
 
             int i = 0;
             foreach(medlem m in medlem)
@@ -226,7 +227,10 @@ namespace Cirkus
             Lbdatum.Text = "Förnamn";
             Lbtid.Text = "Efternamn";
             Lbplats.Text = "Födelsedata";
-           
+            LbGrupp.Text = TxtBoxFrån.Text + " till " + TxtboxTill.Text;
+            Lbhuvud.Text = "Träningsaktiviter";
+
+
 
             int i = 0;
             foreach (Träningstillfälle t in datum2)
