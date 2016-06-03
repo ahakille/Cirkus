@@ -77,6 +77,14 @@ namespace Cirkus
             }
 
             lbl_med.Text = "Antal deltagare: " + i;
+
+            int x = 0;
+            foreach (Träningstillfälle t in tillfälle)
+            {
+                x++;
+            }
+
+            lbl_med.Text = "Totalt: " + x;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
