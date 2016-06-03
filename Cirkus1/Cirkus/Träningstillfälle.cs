@@ -31,7 +31,7 @@ namespace Cirkus
 
         public override string ToString()
         {
-            return  " " + Aktivitet +"   "+ Datum+"    " + Tid +"  "+Plats ;
+            return  " " + Aktivitet +"   "+ Datum+"    " + Tid +"  "+Plats+ " " + antaldeltagare ;
         }
 
     }

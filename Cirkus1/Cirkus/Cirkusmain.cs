@@ -18,7 +18,7 @@ namespace Cirkus
         public Cirkusmain()
         {
             InitializeComponent();
-            tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id order by t.datum DESC ");
+           tillfälle = t.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, a.aktivitet from träningstillfälle t, träningstyp a where t.aktivtetsid = a.id order by t.datum DESC ");
             tillfälleBox.DataSource = tillfälle;
         }
 

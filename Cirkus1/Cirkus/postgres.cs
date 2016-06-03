@@ -157,22 +157,7 @@ namespace Cirkus
             return tgrupp;
 
         }
-        public List<Antaldeltagare> hämtadeltagare (string psql)
-        {
-            sqlFraga(psql);
-            List<Antaldeltagare> tgrupp = new List<Antaldeltagare>();
-            foreach (DataRow dr in _tablell.Rows)
-            {
-                string nr,count;
-                Antaldeltagare grupp = new Antaldeltagare();
-                nr = dr["fräningstillfalle"].ToString();
-                count = dr["count"].ToString();
-                grupp.antal = Convert.ToInt32(count);
-                grupp.träningstillfalle = Convert.ToUInt16(nr);
-                tgrupp.Add(grupp);
-            }
-            return tgrupp;
-        }
+    
         public List<Träningstillfälle> hämtaTräningslista (string psql)
         {
             sqlFraga(psql);
@@ -194,6 +179,33 @@ namespace Cirkus
                 t.AktivitetID = Convert.ToUInt16(a);
                 tillfälle.Add(t);
                           
+            }
+            return tillfälle;
+        }
+        public List<Träningstillfälle> hämtadeltagare (string psql)
+        {
+
+            sqlFraga(psql);
+            List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
+            foreach (DataRow dr in _tablell.Rows)
+            {
+                string nr, datum, count;
+                string a;
+
+                Träningstillfälle t = new Träningstillfälle();
+                nr = dr["id"].ToString();
+                t.Plats = dr["plats"].ToString();
+                datum = dr["datum"].ToString();
+                t.Tid = dr["tid"].ToString();
+                t.Aktivitet = dr["aktivitet"].ToString();
+                a = dr["aktivtetsid"].ToString();
+                count = dr["count"].ToString();
+                t.antaldeltagare = Convert.ToInt32(count);
+                t.Datum = Convert.ToInt32(datum);
+                t.Id = Convert.ToUInt16(nr);
+                t.AktivitetID = Convert.ToUInt16(a);
+                tillfälle.Add(t);
+
             }
             return tillfälle;
         }

@@ -23,9 +23,6 @@ namespace Cirkus
         medlem aktuelltränare = new medlem();
         Träningstillfälle aktuellträningstillfälle = new Träningstillfälle();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
-        private int _träningsgrupp;
-        private bool _fleraträningsgrupper, _åter= false;
-        private string _träningsgruppnamn;
         public CirkusNärvaror()
         {
             InitializeComponent();
@@ -46,28 +43,15 @@ namespace Cirkus
             rensafält();
             postgres db = new postgres();
             postgres db2 = new postgres();
-            if ( _åter == true)
-            {
-                _fleraträningsgrupper = false;
-            }
-            if(_fleraträningsgrupper==true)
-            {
-                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where träningsgrupp = '" + aktuellgrupp.Gruppid + "'or träningsgrupp = '" + _träningsgrupp + "') and t.aktivtetsid = p.id ");
-                tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "'or träningsgrupp ='" + _träningsgrupp + "') ");
-                LbGrupp.Text = aktuellgrupp.Gruppnamn + " och " + _träningsgruppnamn;
-            }
-            else
-            {
-                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where träningsgrupp='" + aktuellgrupp.Gruppid + "') and t.aktivtetsid = p.id ");
-                tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
-                LbGrupp.Text = aktuellgrupp.Gruppnamn;
-            }
+
+            tillfälle = db.hämtadeltagare("select t.tid, t.plats, t.aktivtetsid, t.datum, a.aktivitet, t.id, count(medlem) from  träningstillfälle t, träningstyp a, deltar d, träningsgrupp g where d.träningsgrupp ='" + aktuellgrupp.Gruppid + "' and g.gruppid ='" + aktuellgrupp.Gruppid + "' and t.id = d.träningstillfalle and t.aktivtetsid = a.id group by t.tid ,t.plats, t.aktivtetsid, t.datum, a.aktivitet, t.id ;");
+            tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+            LbGrupp.Text = aktuellgrupp.Gruppnamn;
+
             Lbhuvud.Text = "Träningsgrupp";
             LboxMedlem.DataSource = tillfälle;
             LboxLedare.DataSource = tränare;
-            LbLäggtillgrupp.Text = "Grupper";
-            _åter = true;
-            BtGruppLäggtill.Enabled = true;
+
             Lbhuvud.Text = "Träningsgrupp";
 
             int i = 0;
@@ -77,14 +61,17 @@ namespace Cirkus
             }
 
             lbl_med.Text = "Antal deltagare: " + i;
+            
 
-            int x = 0;
+            int x=0,y=0 ,d = 0;
             foreach (Träningstillfälle t in tillfälle)
             {
+                y = tillfälle[x].antaldeltagare;
                 x++;
+                d=d + y;
             }
-
-            lbl_med.Text = "Antal träningstillfällen: " + x;
+            
+            lbl_med.Text = "Antal träningstillfällen: " + x +" och totalt antaldeltagare är " + d ;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,15 +133,6 @@ namespace Cirkus
             LboxAktivitet.DataSource = null;
             LboxLedare.DataSource = null;
             LboxMedlem.DataSource = null;
-        }
-
-        private void BtGruppLäggtill_Click(object sender, EventArgs e)
-        {
-            _träningsgrupp = aktuellgrupp.Gruppid;
-            _träningsgruppnamn = aktuellgrupp.Gruppnamn;
-            LbLäggtillgrupp.Text = _träningsgruppnamn;
-            _fleraträningsgrupper = true;
-            BtGruppLäggtill.Enabled = false;
         }
 
         private void BtSökdatum_Click(object sender, EventArgs e)
