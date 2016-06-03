@@ -226,7 +226,7 @@ namespace Cirkus
                 _cmd.ExecuteNonQuery();
 
             }
-            catch (NpgsqlException ex)
+            catch (NpgsqlException)
             {
              
             }
@@ -272,7 +272,7 @@ namespace Cirkus
                 _cmd.ExecuteNonQuery();
 
             }
-            catch (NpgsqlException ex)
+            catch (NpgsqlException)
             {
 
             }
