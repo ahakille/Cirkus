@@ -45,21 +45,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BtGruppsök = new System.Windows.Forms.Button();
             this.CboxTräningsgrupp = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.LbMedlemr = new System.Windows.Forms.Label();
+            this.LbFörnamn = new System.Windows.Forms.Label();
+            this.Lbefternamn = new System.Windows.Forms.Label();
+            this.LbFöresle = new System.Windows.Forms.Label();
             this.Lbhuvud = new System.Windows.Forms.Label();
             this.LboxAktivitet = new System.Windows.Forms.ListBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.LbAktivitet = new System.Windows.Forms.Label();
+            this.Lbdatum = new System.Windows.Forms.Label();
+            this.Lbtid = new System.Windows.Forms.Label();
             this.lbl_med = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_aktiv = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.LboxLedare = new System.Windows.Forms.ListBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.Lbplats = new System.Windows.Forms.Label();
             this.LbGrupp = new System.Windows.Forms.Label();
             this.Btstäng = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -233,41 +233,41 @@
             this.CboxTräningsgrupp.TabIndex = 0;
             this.CboxTräningsgrupp.SelectedIndexChanged += new System.EventHandler(this.CboxTräningsgrupp_SelectedIndexChanged);
             // 
-            // label6
+            // LbMedlemr
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 263);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Medlemsnr:";
+            this.LbMedlemr.AutoSize = true;
+            this.LbMedlemr.Location = new System.Drawing.Point(22, 263);
+            this.LbMedlemr.Name = "LbMedlemr";
+            this.LbMedlemr.Size = new System.Drawing.Size(61, 13);
+            this.LbMedlemr.TabIndex = 11;
+            this.LbMedlemr.Text = "Medlemsnr:";
             // 
-            // label7
+            // LbFörnamn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 263);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Förnamn";
+            this.LbFörnamn.AutoSize = true;
+            this.LbFörnamn.Location = new System.Drawing.Point(90, 263);
+            this.LbFörnamn.Name = "LbFörnamn";
+            this.LbFörnamn.Size = new System.Drawing.Size(48, 13);
+            this.LbFörnamn.TabIndex = 11;
+            this.LbFörnamn.Text = "Förnamn";
             // 
-            // label8
+            // Lbefternamn
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 263);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Efternamn";
+            this.Lbefternamn.AutoSize = true;
+            this.Lbefternamn.Location = new System.Drawing.Point(155, 263);
+            this.Lbefternamn.Name = "Lbefternamn";
+            this.Lbefternamn.Size = new System.Drawing.Size(55, 13);
+            this.Lbefternamn.TabIndex = 11;
+            this.Lbefternamn.Text = "Efternamn";
             // 
-            // label9
+            // LbFöresle
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(216, 263);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Förelsedatum";
+            this.LbFöresle.AutoSize = true;
+            this.LbFöresle.Location = new System.Drawing.Point(216, 263);
+            this.LbFöresle.Name = "LbFöresle";
+            this.LbFöresle.Size = new System.Drawing.Size(70, 13);
+            this.LbFöresle.TabIndex = 11;
+            this.LbFöresle.Text = "Förelsedatum";
             // 
             // Lbhuvud
             // 
@@ -285,34 +285,33 @@
             this.LboxAktivitet.Name = "LboxAktivitet";
             this.LboxAktivitet.Size = new System.Drawing.Size(296, 173);
             this.LboxAktivitet.TabIndex = 0;
-            this.LboxAktivitet.SelectedIndexChanged += new System.EventHandler(this.LboxAktivitet_SelectedIndexChanged);
             // 
-            // label11
+            // LbAktivitet
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(351, 263);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Aktivitet";
+            this.LbAktivitet.AutoSize = true;
+            this.LbAktivitet.Location = new System.Drawing.Point(351, 263);
+            this.LbAktivitet.Name = "LbAktivitet";
+            this.LbAktivitet.Size = new System.Drawing.Size(45, 13);
+            this.LbAktivitet.TabIndex = 11;
+            this.LbAktivitet.Text = "Aktivitet";
             // 
-            // label12
+            // Lbdatum
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(419, 263);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Datum";
+            this.Lbdatum.AutoSize = true;
+            this.Lbdatum.Location = new System.Drawing.Point(419, 263);
+            this.Lbdatum.Name = "Lbdatum";
+            this.Lbdatum.Size = new System.Drawing.Size(38, 13);
+            this.Lbdatum.TabIndex = 11;
+            this.Lbdatum.Text = "Datum";
             // 
-            // label13
+            // Lbtid
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(479, 263);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(22, 13);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Tid";
+            this.Lbtid.AutoSize = true;
+            this.Lbtid.Location = new System.Drawing.Point(479, 263);
+            this.Lbtid.Name = "Lbtid";
+            this.Lbtid.Size = new System.Drawing.Size(22, 13);
+            this.Lbtid.TabIndex = 11;
+            this.Lbtid.Text = "Tid";
             // 
             // lbl_med
             // 
@@ -358,14 +357,14 @@
             this.LboxLedare.Size = new System.Drawing.Size(225, 43);
             this.LboxLedare.TabIndex = 0;
             // 
-            // label18
+            // Lbplats
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(541, 263);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(30, 13);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Plats";
+            this.Lbplats.AutoSize = true;
+            this.Lbplats.Location = new System.Drawing.Point(541, 263);
+            this.Lbplats.Name = "Lbplats";
+            this.Lbplats.Size = new System.Drawing.Size(30, 13);
+            this.Lbplats.TabIndex = 11;
+            this.Lbplats.Text = "Plats";
             // 
             // LbGrupp
             // 
@@ -395,18 +394,18 @@
             this.Controls.Add(this.Btstäng);
             this.Controls.Add(this.LbGrupp);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.LbFöresle);
+            this.Controls.Add(this.Lbefternamn);
+            this.Controls.Add(this.LbFörnamn);
+            this.Controls.Add(this.Lbplats);
+            this.Controls.Add(this.Lbtid);
             this.Controls.Add(this.lbl_aktiv);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.Lbdatum);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.lbl_med);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.LbAktivitet);
             this.Controls.Add(this.Lbhuvud);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.LbMedlemr);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -445,21 +444,21 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtGruppsök;
         private System.Windows.Forms.ComboBox CboxTräningsgrupp;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LbMedlemr;
+        private System.Windows.Forms.Label LbFörnamn;
+        private System.Windows.Forms.Label Lbefternamn;
+        private System.Windows.Forms.Label LbFöresle;
         private System.Windows.Forms.Label Lbhuvud;
         private System.Windows.Forms.ListBox LboxAktivitet;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label LbAktivitet;
+        private System.Windows.Forms.Label Lbdatum;
+        private System.Windows.Forms.Label Lbtid;
         private System.Windows.Forms.Label lbl_med;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lbl_aktiv;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ListBox LboxLedare;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label Lbplats;
         private System.Windows.Forms.Label LbGrupp;
         private System.Windows.Forms.Button Btstäng;
     }
