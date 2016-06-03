@@ -19,8 +19,6 @@ namespace Cirkus
         List<Träningstillfälle> tillfälle = new List<Träningstillfälle>();
         List<Träningstillfälle> datum1 = new List<Träningstillfälle>();
         List<Träningstillfälle> datum2 = new List<Träningstillfälle>();
-        List<Antaldeltagare> deltagare = new List<Antaldeltagare>();
-        Antaldeltagare aktuelltid = new Antaldeltagare();
         närvaro aktuellmedlem = new närvaro();
         medlem aktuelltränare = new medlem();
         Träningstillfälle aktuellträningstillfälle = new Träningstillfälle();
@@ -86,7 +84,7 @@ namespace Cirkus
                 x++;
             }
 
-            lbl_med.Text = "Totalt: " + x;
+            lbl_med.Text = "Antal träningstillfällen: " + x;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
