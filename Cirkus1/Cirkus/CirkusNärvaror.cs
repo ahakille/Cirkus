@@ -84,7 +84,7 @@ namespace Cirkus
                 x++;
             }
 
-            lbl_med.Text = "Totalt: " + x * ;
+            lbl_med.Text = "Antal träningstillfällen: " + x;
         }
 
         private void CboxTräningsgrupp_SelectedIndexChanged(object sender, EventArgs e)
