@@ -24,7 +24,7 @@ namespace Cirkus
         Träningstillfälle aktuellträningstillfälle = new Träningstillfälle();
         Träningsgrupp aktuellgrupp = new Träningsgrupp();
         private int _träningsgrupp;
-        private bool _fleraträningsgrupper, _åter,_åter2,_åter3 = false;
+        private bool _fleraträningsgrupper, _åter= false;
         private string _träningsgruppnamn;
         public CirkusNärvaror()
         {
@@ -42,9 +42,7 @@ namespace Cirkus
         }
 
         private void BtGruppsök_Click(object sender, EventArgs e)
-        {
-            _åter2 = true;
-            _åter3 = false;
+        {         
             rensafält();
             postgres db = new postgres();
             postgres db2 = new postgres();
@@ -54,30 +52,22 @@ namespace Cirkus
             }
             if(_fleraträningsgrupper==true)
             {
-                medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "'or träningsgrupp ='" + _träningsgrupp + "') ");
+                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where träningsgrupp = '" + aktuellgrupp.Gruppid + "'or träningsgrupp = '" + _träningsgrupp + "') and t.aktivtetsid = p.id ");
                 tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "'or träningsgrupp ='" + _träningsgrupp + "') ");
                 LbGrupp.Text = aktuellgrupp.Gruppnamn + " och " + _träningsgruppnamn;
             }
             else
             {
-                medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from ingåri where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
+                tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where träningsgrupp='" + aktuellgrupp.Gruppid + "') and t.aktivtetsid = p.id ");
                 tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from tränar where träningsgrupp ='" + aktuellgrupp.Gruppid + "') ");
                 LbGrupp.Text = aktuellgrupp.Gruppnamn;
             }
             Lbhuvud.Text = "Träningsgrupp";
-            LboxMedlem.DataSource = medlem;
+            LboxMedlem.DataSource = tillfälle;
             LboxLedare.DataSource = tränare;
             LbLäggtillgrupp.Text = "Grupper";
             _åter = true;
             BtGruppLäggtill.Enabled = true;
-            LbMedlemr.Text = "Medlemsnr:";
-            LbFörnamn.Text = "Förnamn";
-            Lbefternamn.Text = "Efternamn";
-            LbFöresle.Text = "Födelsedata";
-            LbAktivitet.Text = "Aktivitet";
-            Lbdatum.Text = "Datum";
-            Lbtid.Text = "Tid";
-            Lbplats.Text = "Plats";
             Lbhuvud.Text = "Träningsgrupp";
 
             int i = 0;
@@ -96,41 +86,7 @@ namespace Cirkus
         }
 
         private void LboxMedlem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_åter2 == true)
-            {
-                aktuellmedlem = (närvaro)LboxMedlem.SelectedItem;
-                if (aktuellmedlem != null)
-                {
-                    postgres db = new postgres();
-                    
-                    if (_fleraträningsgrupper == true)
-                    {
-
-                        tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "'or träningsgrupp = '" + _träningsgrupp + "') and t.aktivtetsid = p.id ");
-                        
-                    }
-                    else
-                    {
-                        tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "') and t.aktivtetsid = p.id ");
-                        
-                    }
-
-                    LboxAktivitet.DataSource = null;
-                    LboxAktivitet.DataSource = tillfälle;
-
-                    
-                    int i = 0;
-                    foreach (Träningstillfälle t in tillfälle)
-                    {
-                        i++;
-                    }
-
-                    lbl_aktiv.Text = "Antal träningstillfällen: " + i;
-                }
-            }
-            else if (_åter3 == true)
-            {
+        {        
                 aktuellträningstillfälle = (Träningstillfälle)LboxMedlem.SelectedItem;
                 if (aktuellträningstillfälle != null)
                 {
@@ -154,7 +110,7 @@ namespace Cirkus
                     }
 
                     lbl_aktiv.Text = "Antal medlemar: " + i;
-                }
+                
             }
 
             
@@ -196,9 +152,7 @@ namespace Cirkus
         private void BtSökdatum_Click(object sender, EventArgs e)
         {
             int tid1 = 0;
-            int tid2 = 0;
-            _åter2 = false;
-            _åter3 = true;
+            int tid2 = 0;          
             postgres db = new postgres();
             rensafält();
             datum1 = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.aktivtetsid = p.id");
@@ -219,14 +173,6 @@ namespace Cirkus
                 }
             }
             LboxMedlem.DataSource = datum2;
-            LbMedlemr.Text = "Aktivitet";
-            LbFörnamn.Text = "Datum";
-            Lbefternamn.Text = "Tid";
-            LbFöresle.Text = "Plats";
-            LbAktivitet.Text = "Medlemsnr:";
-            Lbdatum.Text = "Förnamn";
-            Lbtid.Text = "Efternamn";
-            Lbplats.Text = "Födelsedata";
             LbGrupp.Text = TxtBoxFrån.Text + " till " + TxtboxTill.Text;
             Lbhuvud.Text = "Träningstillfällen";
 

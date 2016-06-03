@@ -236,7 +236,7 @@
             // LbMedlemr
             // 
             this.LbMedlemr.AutoSize = true;
-            this.LbMedlemr.Location = new System.Drawing.Point(22, 263);
+            this.LbMedlemr.Location = new System.Drawing.Point(358, 263);
             this.LbMedlemr.Name = "LbMedlemr";
             this.LbMedlemr.Size = new System.Drawing.Size(61, 13);
             this.LbMedlemr.TabIndex = 11;
@@ -245,7 +245,7 @@
             // LbFörnamn
             // 
             this.LbFörnamn.AutoSize = true;
-            this.LbFörnamn.Location = new System.Drawing.Point(90, 263);
+            this.LbFörnamn.Location = new System.Drawing.Point(426, 263);
             this.LbFörnamn.Name = "LbFörnamn";
             this.LbFörnamn.Size = new System.Drawing.Size(48, 13);
             this.LbFörnamn.TabIndex = 11;
@@ -254,7 +254,7 @@
             // Lbefternamn
             // 
             this.Lbefternamn.AutoSize = true;
-            this.Lbefternamn.Location = new System.Drawing.Point(155, 263);
+            this.Lbefternamn.Location = new System.Drawing.Point(491, 263);
             this.Lbefternamn.Name = "Lbefternamn";
             this.Lbefternamn.Size = new System.Drawing.Size(55, 13);
             this.Lbefternamn.TabIndex = 11;
@@ -263,7 +263,7 @@
             // LbFöresle
             // 
             this.LbFöresle.AutoSize = true;
-            this.LbFöresle.Location = new System.Drawing.Point(216, 263);
+            this.LbFöresle.Location = new System.Drawing.Point(552, 263);
             this.LbFöresle.Name = "LbFöresle";
             this.LbFöresle.Size = new System.Drawing.Size(70, 13);
             this.LbFöresle.TabIndex = 11;
@@ -289,7 +289,7 @@
             // LbAktivitet
             // 
             this.LbAktivitet.AutoSize = true;
-            this.LbAktivitet.Location = new System.Drawing.Point(351, 263);
+            this.LbAktivitet.Location = new System.Drawing.Point(31, 263);
             this.LbAktivitet.Name = "LbAktivitet";
             this.LbAktivitet.Size = new System.Drawing.Size(45, 13);
             this.LbAktivitet.TabIndex = 11;
@@ -298,7 +298,7 @@
             // Lbdatum
             // 
             this.Lbdatum.AutoSize = true;
-            this.Lbdatum.Location = new System.Drawing.Point(419, 263);
+            this.Lbdatum.Location = new System.Drawing.Point(99, 263);
             this.Lbdatum.Name = "Lbdatum";
             this.Lbdatum.Size = new System.Drawing.Size(38, 13);
             this.Lbdatum.TabIndex = 11;
@@ -307,7 +307,7 @@
             // Lbtid
             // 
             this.Lbtid.AutoSize = true;
-            this.Lbtid.Location = new System.Drawing.Point(479, 263);
+            this.Lbtid.Location = new System.Drawing.Point(159, 263);
             this.Lbtid.Name = "Lbtid";
             this.Lbtid.Size = new System.Drawing.Size(22, 13);
             this.Lbtid.TabIndex = 11;
@@ -360,7 +360,7 @@
             // Lbplats
             // 
             this.Lbplats.AutoSize = true;
-            this.Lbplats.Location = new System.Drawing.Point(541, 263);
+            this.Lbplats.Location = new System.Drawing.Point(221, 263);
             this.Lbplats.Name = "Lbplats";
             this.Lbplats.Size = new System.Drawing.Size(30, 13);
             this.Lbplats.TabIndex = 11;
