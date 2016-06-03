@@ -13,9 +13,10 @@ namespace Cirkus
         public void GetGrupptillfälle(int gruppID)
         {
             GruppID = gruppID;
+            string g = Convert.ToString(GruppID);
 
             postgres n = new postgres();
-            n.SqlAdmin("select g.namn,t.datum, t.tid, a.aktivitet, t.id from träningstillfälle t, deltar d, träningsgrupp g, träningstyp a where g.gruppid = " + 6 + " and d.träningsgrupp = g.gruppid and t.id = d.träningstillfalle and a.id = t.aktivtetsid; ");
+            n.SqlAdmin1("select g.namn,t.datum, t.tid, a.aktivitet, t.id from träningstillfälle t, deltar d, träningsgrupp g, träningstyp a where g.gruppid = @par1 and d.träningsgrupp = g.gruppid and t.id = d.träningstillfalle and a.id = t.aktivtetsid; ", g);
         }
 
         public override string ToString()

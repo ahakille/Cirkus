@@ -32,7 +32,7 @@ namespace Cirkus
             {
                 string namn = laggtillTxt.Text;
                 postgres db = new postgres();
-                db.SqlAdmin("insert into träningsgrupp(namn) values('" + namn + "')");
+                db.SqlAdmin1("insert into träningsgrupp(namn) values(@par1)",namn);
             }
             Close();
 

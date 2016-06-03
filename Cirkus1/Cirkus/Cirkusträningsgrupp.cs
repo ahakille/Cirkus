@@ -18,6 +18,7 @@ namespace Cirkus
         medlem aktuelltränare = new medlem();
         List<medlem> medlem = new List<medlem>();
         List<medlem> tränare = new List<medlem>();
+        private string _medlemnr, _gruppnr, _tmedlemnr, _tgruppnr;
         public Cirkusträningsgrupp()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace Cirkus
             tränare = db3.hämtamedlem("select * from medlem");
             NymedlemCbox.DataSource = medlem;
             NytränareCbox.DataSource = tränare;
+            
         }
 
         private void TräningsgruppCbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace Cirkus
         {
             postgres db = new postgres();
             
-            db.SqlAdmin("insert into ingåri(medlem,träningsgrupp) values('" + aktuellmedlem.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            db.SqlAdmin2("insert into ingåri(medlem,träningsgrupp) values(@par1, @par2)",_medlemnr, _gruppnr);
             Hämtamedlemar();
         }
 
@@ -78,7 +80,12 @@ namespace Cirkus
             aktuellmedlem = (medlem)NymedlemCbox.SelectedItem;
             if (aktuellmedlem != null)
             {
-                
+                _gruppnr = Convert.ToString(aktuellgrupp.Gruppid);
+                _medlemnr = Convert.ToString(aktuellmedlem.Medlemnr);
+
+
+
+
             }
 
         }
@@ -91,7 +98,7 @@ namespace Cirkus
         private void NytränareBt_Click(object sender, EventArgs e)
         {
             postgres db = new postgres();
-            db.SqlAdmin("insert into tränar(medlem,träningsgrupp) values('" + aktuelltränare.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            db.SqlAdmin2("insert into tränar(medlem,träningsgrupp) values(@par1,@par2)",_tmedlemnr,_tgruppnr);
             Hämtamedlemar();
         }
 
@@ -99,6 +106,12 @@ namespace Cirkus
         {
 
             aktuelltränare = (medlem)NytränareCbox.SelectedItem;
+            if (aktuelltränare != null)
+            {
+                _tgruppnr = Convert.ToString(aktuellgrupp.Gruppid);
+                _tmedlemnr = Convert.ToString(aktuelltränare.Medlemnr);
+
+            }
 
 
         }

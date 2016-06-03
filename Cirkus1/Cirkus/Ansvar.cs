@@ -17,7 +17,7 @@ namespace Cirkus
 
             postgres a = new postgres();
 
-            a.SqlAdmin("insert into ansvarsområde (ansvar) values ('" + ansvarsområde + "');");
+            a.SqlAdmin1("insert into ansvarsområde (ansvar) values (@par1);",ansvarsområde);
         }
 
 

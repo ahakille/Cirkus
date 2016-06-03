@@ -32,6 +32,7 @@ namespace Cirkus
             try
             {
                 _cmd = new NpgsqlCommand(sql, _conn);
+
                 _dr = _cmd.ExecuteReader();
                 _tablell.Load(_dr);
                 return _tablell;
@@ -210,13 +211,20 @@ namespace Cirkus
             return tillfälle;
         }
 
-        private void SqlNonQuery(string sql)
+        private void SqlNonQuery(string sql, string par1,string par2,string par3 ,string par4 ,string par5 ,string par6)
         {
             try
             {
 
                 _cmd = new NpgsqlCommand(sql, _conn);
+                _cmd.Parameters.AddWithValue("par1", par1);
+                _cmd.Parameters.AddWithValue("par2", par2);
+                _cmd.Parameters.AddWithValue("par3", par3);
+                _cmd.Parameters.AddWithValue("par4", par4);
+                _cmd.Parameters.AddWithValue("par5", par5);
+                _cmd.Parameters.AddWithValue("par6", par6);
                 _cmd.ExecuteNonQuery();
+
             }
             catch (NpgsqlException ex)
             {
@@ -228,12 +236,51 @@ namespace Cirkus
                 _conn.Close();
             }
         }
-
-        public void SqlAdmin(string sql)
+        public void SqlAdmin2(string sql, string par1,string par2)
         {
-            SqlNonQuery(sql);
+            string  par3 = "", par4 = "", par5 = "", par6 = "";
+            SqlNonQuery(sql, par1, par2, par3, par4, par5, par6);
         }
+        public void SqlAdmin1(string sql, string par1)
+        {
+            string par2 = "", par3 = "", par4 = "", par5 = "", par6 = "";
+            SqlNonQuery(sql, par1, par2, par3, par4, par5, par6);
+        }
+        public void SqlAdmin4(string sql, string par1,string par2,string par3,string par4)
+        {
+            string  par5 = "", par6 = "";
+            SqlNonQuery(sql, par1, par2, par3, par4, par5, par6);
+        }
+        public void SqlNonQuery2(string sql, string par1, string par2, string par3, string par4, string par5, string par6, string par7, string par8, string par9, string par10, string par11, string par12)
+        {
+            try
+            {
 
+                _cmd = new NpgsqlCommand(sql, _conn);
+                _cmd.Parameters.AddWithValue("par1", par1);
+                _cmd.Parameters.AddWithValue("par2", par2);
+                _cmd.Parameters.AddWithValue("par3", par3);
+                _cmd.Parameters.AddWithValue("par4", par4);
+                _cmd.Parameters.AddWithValue("par5", par5);
+                _cmd.Parameters.AddWithValue("par6", par6);
+                _cmd.Parameters.AddWithValue("par7", par7);
+                _cmd.Parameters.AddWithValue("par8", par8);
+                _cmd.Parameters.AddWithValue("par9", par9);
+                _cmd.Parameters.AddWithValue("par10", par10);
+                _cmd.Parameters.AddWithValue("par11", par11);
+                _cmd.Parameters.AddWithValue("par12", par12);
+                _cmd.ExecuteNonQuery();
 
-    }
+            }
+            catch (NpgsqlException ex)
+            {
+
+            }
+
+            finally
+            {
+                _conn.Close();
+            }
+        }
+        }
 }

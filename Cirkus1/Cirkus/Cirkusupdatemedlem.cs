@@ -36,56 +36,56 @@ namespace Cirkus
 
         private void updateBt_Click(object sender, EventArgs e)
         {
-             
+            string n = Convert.ToString(aktuellmedlem.Medlemnr);
             if (aktuellmedlem.Förnamn != fnamnTxt.Text)
             {
                 aktuellmedlem.Förnamn = fnamnTxt.Text;
-                aktuellmedlem.Nyttförnamn();
+                aktuellmedlem.Nyttförnamn(aktuellmedlem.Förnamn, n);
             }
             if (aktuellmedlem.Efternamn != enamnTxt.Text)
             {
                 aktuellmedlem.Efternamn = enamnTxt.Text;
-                aktuellmedlem.Nyttefternamnn();
+                aktuellmedlem.Nyttefternamnn(aktuellmedlem.Efternamn, n);
             }
             if (aktuellmedlem.Telefon != telefonTxt.Text)
             {
                 aktuellmedlem.Telefon = telefonTxt.Text;
-                aktuellmedlem.NyTelefon(aktuellmedlem.Telefon);
+                aktuellmedlem.NyTelefon(aktuellmedlem.Telefon,n);
             }
             if (aktuellmedlem.Mobilnr != mobilTxt.Text)
             {
                 aktuellmedlem.Mobilnr = mobilTxt.Text;
-                aktuellmedlem.NyMobil(aktuellmedlem.Mobilnr);
+                aktuellmedlem.NyMobil(aktuellmedlem.Mobilnr,n);
             }
             if (aktuellmedlem.Gata != gataTxt.Text)
             {
                 aktuellmedlem.Gata = gataTxt.Text;
-                aktuellmedlem.Nygata(aktuellmedlem.Gata);
+                aktuellmedlem.Nygata(aktuellmedlem.Gata, n);
             }
             if (aktuellmedlem.Postnr != postTxt.Text)
             {
                 aktuellmedlem.Postnr = postTxt.Text;
-                aktuellmedlem.NyttPostNr(aktuellmedlem.Postnr);
+                aktuellmedlem.NyttPostNr(aktuellmedlem.Postnr, n);
             }
             if (aktuellmedlem.Ort != ortTxt.Text)
             {
                 aktuellmedlem.Ort = ortTxt.Text;
-                aktuellmedlem.Nygata(aktuellmedlem.Ort);
+                aktuellmedlem.Nygata(aktuellmedlem.Ort, n);
             }
             if (aktuellmedlem.Email != emailTxt.Text)
             {
                 aktuellmedlem.Email = emailTxt.Text;
-                aktuellmedlem.NyEmail(aktuellmedlem.Email);
+                aktuellmedlem.NyEmail(aktuellmedlem.Email,n);
             }
             if (aktuellmedlem.Medlemstyp != MedlemstypCbox.Text)
             {
                 aktuellmedlem.Medlemstyp = MedlemstypCbox.Text;
-                aktuellmedlem.NyMedlemstyp(aktuellmedlem.Medlemstyp);
+                aktuellmedlem.NyMedlemstyp(aktuellmedlem.Medlemstyp,n);
             }
             if (aktuellmedlem.Foto != fotoCbox.Checked)
             {
                 aktuellmedlem.Foto = fotoCbox.Checked;
-                aktuellmedlem.NyttFotoval(aktuellmedlem.Foto);
+                aktuellmedlem.NyttFotoval(aktuellmedlem.Foto,n);
             }
             
 

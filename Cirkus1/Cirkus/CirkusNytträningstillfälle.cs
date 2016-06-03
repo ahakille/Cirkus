@@ -98,7 +98,7 @@ namespace Cirkus
                 LboxDeltagit.DataSource = null;
                 LboxDeltagit.DataSource = tillagda;
                 postgres db = new postgres();
-                db.SqlAdmin("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), " + aktuellmedlem.Medlemnr + ", " + aktuellgrupp.Gruppid + ");");
+                db.SqlAdmin2("insert into deltar (träningstillfalle, medlem, träningsgrupp) values (currval('träningstillfälle_id_seq'::regclass), @par1, @par2);",Convert.ToString(aktuellmedlem.Medlemnr),Convert.ToString(aktuellgrupp.Gruppid));
             }
 
         }
@@ -114,7 +114,7 @@ namespace Cirkus
             tränare.Add(aktuelltränare);
             LboxTränare.DataSource = null;
             LboxTränare.DataSource = tränare;
-            db.SqlAdmin("insert into leder(medlem,träningstillfälle) values('" + aktuelltränare.Medlemnr + "','" + aktuellgrupp.Gruppid + "')");
+            db.SqlAdmin2("insert into leder(medlem,träningstillfälle) values(@par1, @par2)", Convert.ToString(aktuelltränare.Medlemnr), Convert.ToString(aktuellgrupp.Gruppid));
             
         }
 
