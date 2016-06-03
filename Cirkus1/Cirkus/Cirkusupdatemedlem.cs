@@ -122,6 +122,7 @@ namespace Cirkus
         private void Bttabort_Click(object sender, EventArgs e)
         {
             aktuellmedlem.RaderaMedlem(aktuellmedlem.Medlemnr);
+            hämtalistan();
         }
     }
 }
