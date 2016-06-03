@@ -62,6 +62,7 @@
             this.Lbplats = new System.Windows.Forms.Label();
             this.LbGrupp = new System.Windows.Forms.Label();
             this.Btstäng = new System.Windows.Forms.Button();
+            this.LblAntal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -386,11 +387,21 @@
             this.Btstäng.UseVisualStyleBackColor = true;
             this.Btstäng.Click += new System.EventHandler(this.Btstäng_Click);
             // 
+            // LblAntal
+            // 
+            this.LblAntal.AutoSize = true;
+            this.LblAntal.Location = new System.Drawing.Point(273, 263);
+            this.LblAntal.Name = "LblAntal";
+            this.LblAntal.Size = new System.Drawing.Size(31, 13);
+            this.LblAntal.TabIndex = 15;
+            this.LblAntal.Text = "Antal";
+            // 
             // CirkusNärvaror
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 553);
+            this.Controls.Add(this.LblAntal);
             this.Controls.Add(this.Btstäng);
             this.Controls.Add(this.LbGrupp);
             this.Controls.Add(this.label17);
@@ -461,5 +472,6 @@
         private System.Windows.Forms.Label Lbplats;
         private System.Windows.Forms.Label LbGrupp;
         private System.Windows.Forms.Button Btstäng;
+        private System.Windows.Forms.Label LblAntal;
     }
 }
