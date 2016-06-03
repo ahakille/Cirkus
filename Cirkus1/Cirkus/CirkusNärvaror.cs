@@ -144,7 +144,7 @@ namespace Cirkus
                         i++;
                     }
 
-                    lbl_med.Text = "Antal medlemar: " + i;
+                    lbl_aktiv.Text = "Antal medlemar: " + i;
                 }
             }
 
@@ -226,7 +226,7 @@ namespace Cirkus
                 i++;
             }
 
-            lbl_aktiv.Text = "Antal träningstillfällen: " + i;
+            lbl_med.Text = "Antal träningstillfällen: " + i;
         }
     }
 }
