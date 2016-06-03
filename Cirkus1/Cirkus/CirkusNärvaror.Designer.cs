@@ -285,6 +285,7 @@
             this.LboxAktivitet.Name = "LboxAktivitet";
             this.LboxAktivitet.Size = new System.Drawing.Size(296, 173);
             this.LboxAktivitet.TabIndex = 0;
+            this.LboxAktivitet.SelectedIndexChanged += new System.EventHandler(this.LboxAktivitet_SelectedIndexChanged);
             // 
             // label11
             // 

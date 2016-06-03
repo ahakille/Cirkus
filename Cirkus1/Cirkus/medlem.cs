@@ -117,13 +117,13 @@ namespace Cirkus
         {
             Medlemnr = medlemNr;
             postgres m = new postgres();
-            m.SqlAdmin("delete from deltar where medlem = " + medlemNr + " ; " +
-            "delete from ansvararöver where medlem = " + medlemNr + " ; " +
-            "delete from ingåri where medlem = " + medlemNr + " ; " +
-            "delete from leder where medlem = " + medlemNr + " ; " +
-            "delete from målsmanför where målsman = " + medlemNr + " ; " + "or barn = " + medlemNr + " ; " +
-            "delete from tränar where medlem = " + medlemNr + " ; " +
-            "delete from medlem where mednr = " + medlemNr + ";");
+            m.SqlAdmin("delete from deltar where medlem = '" + medlemNr + "' ; '" +
+            "'delete from ansvararöver where medlem = '" + medlemNr + "' ; '" +
+            "'delete from ingåri where medlem = '" + medlemNr + "' ; '" +
+            "'delete from leder where medlem = '" + medlemNr + "' ; '" +
+            "'delete from målsmanför where målsman = '" + medlemNr + "' ; '" + "'or barn = '" + medlemNr + "' ; '" +
+            "'delete from tränar where medlem = '" + medlemNr + "' ; '" +
+            "'delete from medlem where mednr = '" + medlemNr + "';'");
         }
 
         public override string ToString()
