@@ -102,21 +102,23 @@ namespace Cirkus
                 if (aktuellmedlem != null)
                 {
                     postgres db = new postgres();
-
+                    
                     if (_fleraträningsgrupper == true)
                     {
 
                         tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "'or träningsgrupp = '" + _träningsgrupp + "') and t.aktivtetsid = p.id ");
-
+                        
                     }
                     else
                     {
                         tillfälle = db.hämtaTräningslista("select t.id, t.plats, t.datum, t.tid, t.aktivtetsid, p.aktivitet from träningstillfälle t, träningstyp p where t.id in(select träningstillfalle from deltar where medlem= '" + aktuellmedlem.Medlemnr + "' and träningsgrupp='" + aktuellgrupp.Gruppid + "') and t.aktivtetsid = p.id ");
+                        
                     }
 
                     LboxAktivitet.DataSource = null;
                     LboxAktivitet.DataSource = tillfälle;
 
+                    
                     int i = 0;
                     foreach (Träningstillfälle t in tillfälle)
                     {
@@ -133,10 +135,16 @@ namespace Cirkus
                 {
 
                     postgres db = new postgres();
+                    postgres db2 = new postgres();
 
                     medlem = db.hämtanärvaro("select * from medlem where mednr in( select medlem from deltar where träningstillfalle ='" + aktuellträningstillfälle.Id + "')");
                     LboxAktivitet.DataSource = null;
                     LboxAktivitet.DataSource = medlem;
+
+
+                    tränare = db2.hämtamedlem("select * from medlem where mednr in( select medlem from leder where träningstillfälle = " + aktuellträningstillfälle.Id + ");");
+                    LboxLedare.DataSource = null;
+                    LboxLedare.DataSource = tränare;
 
                     int i = 0;
                     foreach (medlem m in medlem)
